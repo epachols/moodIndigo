@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- insert links for framework -->
-    <!-- insert link for moment or similar lib -->
+<!-- might not need class="no-js" in the html tag - recommended for stopping certain auto-styles but check if needed using outsourced cdn  -->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- insert link for FA -->
-    <script src="https://kit.fontawesome.com/956330d85a.js" crossorigin="anonymous"></script>
+
+    <!-- Compressed CSS for foundation framework-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/956330d85a.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- link for css stylesheet  -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Mood indiGo</title>
-</head>
-<body>
+  </head>
+  <body>
 
+    <div class="top-bar">
+        <div class="top-bar-left stacked-for-medium">Mood Indigo</div>
+        <div class="top-bar-right stacked-for-medium">Where music mood and Weather meet</div>
+    </div>
 
+    <!-- main content goes in individual grid divs, can put them in a container called grid-container fluid later if need-->
+    <main>
+      <!-- grid-x on a div will put all the things inside it into a row, grid-y will put it into columns -->
+      <div class="grid-x grid-margin-y grid-margin-x align-around" id="content">
+        <div class="cell small-7 flex-container flex-dir-column">
+            <div class="callout primary flex-child-auto">callout for each object in return array</div>
+            <div class="callout primary flex-child-auto">callout for each object in return array</div>
+            <div class="callout primary flex-child-shrink">callout for each object in return array</div>
+          </div>
+        <div class="cell small-3" id="resultscallouts">popup retrieval content goes here</div>
+      </div>
+
+      <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
+        <div class="cell small-4" >welc mat animation</div>
+        <div class="cell small-4">
+            <button type="button" class="alert button" id="startBtn">Search</button>
+            "get started button" 
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+        <div class="grid-x align-center">here be the feet</div>  
+    </footer>
 
     <!-- add in any other libraries we might use -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compressed JavaScript for foundation -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
+      crossorigin="anonymous"
+    ></script>
+    <!-- moment js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
