@@ -10,7 +10,9 @@ be sure to check out their documentation on methods, here is any-api's base for 
  # https://any-api.com/musixmatch_com/musixmatch_com/docs/API_Description 
  
  we will likely be using the following methods from musixmatch:
+
  /artist.search
- /artist.related.get
+ /track.search
  /track.lyrics.get
+ /artist.related.get
  /track.snippet.get 
