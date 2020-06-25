@@ -4,6 +4,9 @@ let city = []
 //Don't move this, needs to run on page load so that it will have the user's location data by the time they want to start. 
 getLocation();
 
+//hides user input prompts until the user clicks a button to start, we still need to add a different button other than reccomend playlists to start the user experience. 
+$(".moodButton").hide()
+
 // // the following is just a test fire of js link
 // $("body").prepend($("<p>").text("HOWDY"));
 
@@ -150,9 +153,7 @@ let userPreferences = {
 // plugs in its uri to iframe URL
 // generate iframe via uri plugged in in space selected
 
-//TODO: create list of types of weather
-//TODO: Build an object for the user profile
-//TODO: Build a function to access that object and retrieve a playlist based on the user prefrences on the weather. 
+
 
 function buildUserProfile(){
     //Will replace empty jQuery with values once design has them implemented
@@ -186,14 +187,13 @@ function playlistRandomizer(emotion){
      let nameSelected = emotion[listSelector].name
      let uriSelected = emotion[listSelector].uri
 
-    
+    //Appends a random playlist to the page from whatever emotion is passsed in/
     let songSpace = $("#resultscallouts")
     let spotifyfirst = '<iframe src="https://open.spotify.com/embed/playlist/'
     let uriInsert = uriSelected + '" '
     let spotifyLast = ' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
     let finalLink = spotifyfirst + uriInsert + spotifyLast
     
-    console.log(finalLink)
     songSpace.append(finalLink)
 }
 
@@ -201,22 +201,43 @@ function playlistRandomizer(emotion){
 //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
 function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + "" + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
     let iconURL = "http://openweathermap.org/img/wn/"
     
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        console.log(response)
         //Returns weather conditions in a string ex: sunny, cloudy, raining etc. 
         let weatherType = response.weather[0].main;
         //Grabs the id of the icon associated with the current weather conditions
         let iconLoc = response.weather[0].icon;
         //concatenates the standard url for the icons with the id of the icon associated with the current weather and puts it into a usable image source link
         let fullIconUrl= iconURL + iconLoc + "@2x.png";
+
+        //Appends text prompting for user input to the page based on current weather. 
+        weatherWelcome = $(".weatherType");
         
-        console.log(weatherType);
+        $('.iconHost').append('<img id="smallWeatherIcon" src="'+fullIconUrl)+'" />'
+        console.log(fullIconUrl)
+        //will make this text more intuitive later this is just temporary for testing
+        weatherWelcome.text('Current conditions in your area are: '+  weatherType + ' does this make you feel ')
+        // if (weatherWelcome == "Clouds"){
+        //     weatherWelcome.text('Looks like it is cloudy in your neighborhood, does this make you feel:')
+        // }
+        // else if (weatherWelcome == "Rain"){
+        //     weatherWelcome.text('Looks like it is raining in your neighborhood, does this make you feel:')
+        // }
+        // else if (weatherWelcome == "Snow"){
+        // weatherWelcome.text('Looks like it is snowing in your neighborhood today, does this make you feel: ');
+        // }
+        // else{
+        //     weatherWelcome.text('Looks like there are clear skies in your neighborhood, does this make you feel: ')
+        // }
+        
+        $(".moodButton").show()
+        
+        console.log(weatherType)
 
     })
 }
