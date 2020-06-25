@@ -137,12 +137,36 @@ var focused = [{
 
 let emotion = happy;
 
+
+let userPreferences = {
+    "rain": "",
+    "clouds":"" ,
+    "clear":"",
+}
 // need 3 more arrays for emotions
 // need to make general function that acccepts happy array or sad array
 // randomized the contents of that array
 // pick the first one
 // plugs in its uri to iframe URL
 // generate iframe via uri plugged in in space selected
+
+//TODO: create list of types of weather
+//TODO: Build an object for the user profile
+//TODO: Build a function to access that object and retrieve a playlist based on the user prefrences on the weather. 
+
+function buildUserProfile(){
+    //Will replace empty jQuery with values once design has them implemented
+    rainEmotion = $("").val().trim();
+    clearSunnyEmotion = $("").val().trim();
+    cloudyEmotion = $("").val().trim();
+
+    userPreferences.rain = rainEmotion;
+    userPreferences.clear = clearSunnyEmotion;
+    userPreferences.clouds = cloudyEmotion;
+
+}
+    
+
 
 function getLocation(){
     //Grabs users general location based on IP address
@@ -164,9 +188,9 @@ function playlistRandomizer(emotion){
 
     
     let songSpace = $("#resultscallouts")
-    let spotifyfirst = '<iframe src="https://open.spotify.com/embed?uri=spotify%3Aplaylist%'
+    let spotifyfirst = '<iframe src="https://open.spotify.com/embed/playlist/'
     let uriInsert = uriSelected + '" '
-    spotifyLast = 'width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    let spotifyLast = ' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
     let finalLink = spotifyfirst + uriInsert + spotifyLast
     
     console.log(finalLink)
@@ -174,11 +198,10 @@ function playlistRandomizer(emotion){
 }
 
 
-<<<<<<< HEAD
-//function will fetch the weather conditions in a given city and the icon associated with that weather condition
+//function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
 function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + "" + apiKey;
     let iconURL = "http://openweathermap.org/img/wn/"
     
     $.ajax({
@@ -200,8 +223,6 @@ function weatherSearch(){
 
 //Temporary to test the weathersearch and getlocation functions
 $("#startBtn").on("click", weatherSearch);
-=======
 playlistRandomizer(emotion);
 
 
->>>>>>> dev
