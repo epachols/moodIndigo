@@ -19,11 +19,23 @@ h3 {
 .fas {
     font-size: 2rem ;
 }
+
+.button {
+    width:120px;
+    height:100px;
+    text-align:center;
+    line-height:1.1em;
+    font-size:1.1em;
+    background-color: rgb(33, 2, 56);
+}
+
+
 /* ------------------------------ */
 
 /* the following stylings are for grid setup and should be considered fully replaceable with subsequent foundation styles.  */
 .small-4 {
-    background-color: rgb(121, 121, 121)
+    background-color: rgb(121, 121, 121);
+    
 }
 
 .top-bar {
