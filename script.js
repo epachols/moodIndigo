@@ -7,7 +7,7 @@ getLocation();
 // // the following is just a test fire of js link
 // $("body").prepend($("<p>").text("HOWDY"));
 
-let happy = [{
+var happy = [{
     "name": "happyBeats",
     "uri": "37i9dQZF1DWSf2RDTDayIx"
 },
@@ -18,9 +18,19 @@ let happy = [{
 {
     "name": "happyThrowback",
     "uri": "37i9dQZF1DWVOMXLzSabIM"
+},
+{
+    "name": "happyRock",
+    "uri": "37i9dQZF1DWXRqgorJj26U"
+},
+{
+    "name": "happyLah",
+    "uri": "37i9dQZF1DWZdLqpoFOt65"
+},
+{
 }]
 
-let sad = [{
+var sad = [{
     "name": "sadCry",
     "uri": "7ABD15iASBIpPP5uJ5awvq"
 },
@@ -31,6 +41,98 @@ let sad = [{
 {
     "name": "sadDepression",
     "uri": "37i2v94FtSr0YRmW9LetICu4q"
+},
+{
+    "name": "sadSongs",
+    "uri": "37i9dQZF1DX7qK8ma5wgG1"
+},
+{
+    "name": "sadCovers",
+    "uri": "37i9dQZF1DX64Y3du11rR1"
+}]
+
+var angry = [{
+    "name": "angryRap",
+    "uri": "6oxSqwtAseyUm65MWl8JEM"
+},
+{
+    "name": "angryFeminist",
+    "uri": "0jFTAWnKeif1jeycmfzntA"
+},
+{
+    "name": "angryBreakup",
+    "uri": "4LkEuyJjv4MVIDWh9QExsp"
+},
+{
+    "name": "angryMetal",
+    "uri": "0iCttsHgYOghFz6QtsB1CH"
+},
+{
+    "name": "angryWorkout",
+    "uri": "4QUNlh17SkjMlcZ9Z9Z9IK"
+}]
+
+var sleepy = [{
+    "name": "sleepPiano",
+    "uri": "37i9dQZF1DX4sWSpwq3LiO"
+},
+{
+    "name": "sleepMeditation",
+    "uri": "0I8mg2ngPlMpDMvNuYcpJx"
+},
+{
+    "name": "sleepJazz",
+    "uri": "37i9dQZF1DXa1rZf8gLhyz"
+},
+{
+    "name": "sleepRain",
+    "uri": "37i9dQZF1DXbcPC6Vvqudd"
+},
+{
+    "name": "sleepSpace",
+    "uri": "37i9dQZF1DX1n9whBbBKoL"
+}]
+
+var love = [{
+    "name": "loveChill",
+    "uri": "4QuJ2DbcTe7R8lzqfNXz7v"
+},
+{
+    "name": "loveCountry",
+    "uri": "37i9dQZF1DX8WMG8VPSOJC"
+},
+{
+    "name": "loveBedroom",
+    "uri": "37i9dQZF1DX0QKpU3cGsyb"
+},
+{
+    "name": "loveAmor",
+    "uri": "37i9dQZF1DWUoGbRYcteyC"
+}, 
+{   
+    "name": "loveBeats",
+    "uri": "7i9dQZF1DWSRc3WJklgBs"
+}]
+
+var focused = [{
+    "name": "focusBeats",
+    "uri": "37i9dQZF1DWWQRwui0ExPn"
+},
+{
+    "name": "focusDeep",
+    "uri": "37i9dQZF1DWZeKCadgRdKQ"
+},
+{
+    "name": "focusClassical",
+    "uri": "37i9dQZF1DXd5zUwdn6lPb"
+},
+{
+    "name": "focusStudy",
+    "uri": "37i9dQZF1DX8NTLI2TtZa6"
+},
+{
+    "name": "focusGuitar",
+    "uri": "37i9dQZF1DX0jgyAiPl8Af"
 }]
 
 let emotion = happy;
