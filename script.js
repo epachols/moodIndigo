@@ -8,130 +8,130 @@ getLocation();
 // $("body").prepend($("<p>").text("HOWDY"));
 
 var happy = [{
-    "name": "happyBeats"
+    "name": "happyBeats",
     "uri": "37i9dQZF1DWSf2RDTDayIx"
 },
 {
-    "name": "happyFolk"
+    "name": "happyFolk",
     "uri": "37i9dQZF1DWSkMjlBZAZ07"
 },
 {
-    "name": "happyThrowback"
+    "name": "happyThrowback",
     "uri": "37i9dQZF1DWVOMXLzSabIM"
 },
 {
-    "name": "happyRock"
+    "name": "happyRock",
     "uri": "37i9dQZF1DWXRqgorJj26U"
 },
 {
-    "name": "happyLah"
+    "name": "happyLah",
     "uri": "37i9dQZF1DWZdLqpoFOt65"
 },
 {
 }]
 
 var sad = [{
-    "name": "sadCry"
+    "name": "sadCry",
     "uri": "7ABD15iASBIpPP5uJ5awvq"
 },
 {
-    "name": "sadClassical"
+    "name": "sadClassical",
     "uri": "37i9dQZF1DXbm0dp7JzNeL"
 },
 {
-    "name": "sadDepression"
+    "name": "sadDepression",
     "uri": "37i2v94FtSr0YRmW9LetICu4q"
 },
 {
-    "name": "sadSongs"
+    "name": "sadSongs",
     "uri": "37i9dQZF1DX7qK8ma5wgG1"
 },
 {
-    "name": "sadCovers"
+    "name": "sadCovers",
     "uri": "37i9dQZF1DX64Y3du11rR1"
 }]
 
 var angry = [{
-    "name": "angryRap"
+    "name": "angryRap",
     "uri": "6oxSqwtAseyUm65MWl8JEM"
 },
 {
-    "name": "angryFeminist"
+    "name": "angryFeminist",
     "uri": "0jFTAWnKeif1jeycmfzntA"
 },
 {
-    "name": "angryBreakup"
+    "name": "angryBreakup",
     "uri": "4LkEuyJjv4MVIDWh9QExsp"
 },
 {
-    "name": "angryMetal"
+    "name": "angryMetal",
     "uri": "0iCttsHgYOghFz6QtsB1CH"
 },
 {
-    "name": "angryWorkout"
+    "name": "angryWorkout",
     "uri": "4QUNlh17SkjMlcZ9Z9Z9IK"
 }]
 
 var sleepy = [{
-    "name": "sleepPiano"
+    "name": "sleepPiano",
     "uri": "37i9dQZF1DX4sWSpwq3LiO"
 },
 {
-    "name": "sleepMeditation"
+    "name": "sleepMeditation",
     "uri": "0I8mg2ngPlMpDMvNuYcpJx"
 },
 {
-    "name": "sleepJazz"
+    "name": "sleepJazz",
     "uri": "37i9dQZF1DXa1rZf8gLhyz"
 },
 {
-    "name": "sleepRain"
+    "name": "sleepRain",
     "uri": "37i9dQZF1DXbcPC6Vvqudd"
 },
 {
-    "name": "sleepSpace"
+    "name": "sleepSpace",
     "uri": "37i9dQZF1DX1n9whBbBKoL"
 }]
 
 var love = [{
-    "name": "loveChill"
+    "name": "loveChill",
     "uri": "4QuJ2DbcTe7R8lzqfNXz7v"
 },
 {
-    "name": "loveCountry"
+    "name": "loveCountry",
     "uri": "37i9dQZF1DX8WMG8VPSOJC"
 },
 {
-    "name": "loveBedroom"
+    "name": "loveBedroom",
     "uri": "37i9dQZF1DX0QKpU3cGsyb"
 },
 {
-    "name": "loveAmor"
+    "name": "loveAmor",
     "uri": "37i9dQZF1DWUoGbRYcteyC"
 }, 
 {   
-    "name": "loveBeats"
+    "name": "loveBeats",
     "uri": "7i9dQZF1DWSRc3WJklgBs"
 }]
 
 var focused = [{
-    "name": "focusBeats"
+    "name": "focusBeats",
     "uri": "37i9dQZF1DWWQRwui0ExPn"
 },
 {
-    "name": "focusDeep"
+    "name": "focusDeep",
     "uri": "37i9dQZF1DWZeKCadgRdKQ"
 },
 {
-    "name": "focusClassical"
+    "name": "focusClassical",
     "uri": "37i9dQZF1DXd5zUwdn6lPb"
 },
 {
-    "name": "focusStudy"
+    "name": "focusStudy",
     "uri": "37i9dQZF1DX8NTLI2TtZa6"
 },
 {
-    "name": "focusGuitar"
+    "name": "focusGuitar",
     "uri": "37i9dQZF1DX0jgyAiPl8Af"
 }]
 
