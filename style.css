@@ -36,10 +36,11 @@ h3 {
 }
 
 .top-bar {
-    background-color:	#4B0082;
+    background-color:black;
+    color:  rgb(145, 3, 211);
 }
 #content {
-    background-color: rgb(148, 119, 197)
+    background-color: rgb(82, 0, 224)
 }
 
 #results {
@@ -58,7 +59,7 @@ h3 {
 }
 footer {
     margin-top: 15vh;
-    background-color: 	#4B0082;
+    background-color: 	black;
 }
 
 /* parallax and weather-dependent classes  */
