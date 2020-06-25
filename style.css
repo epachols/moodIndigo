@@ -39,10 +39,19 @@ footer {
 }
 
 
-/* .parallaxClear
-.parallaxClouds
-.parallaxRain */
+/* parallax defaults and options */
 
+.parallax {
+    background-image: url("assets/parallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 150vh;
+  }
 .parallaxRain {
     background-image: url("assets/rainparallax.jpg");
     height: 100px;
@@ -55,7 +64,7 @@ footer {
     min-height: 150vh;
   }
 
-  .parallaxClear {
+.parallaxClear {
     background-image: url("assets/clearparallax.jpg");
     height: 100px;
 
@@ -66,7 +75,8 @@ footer {
     background-size: cover;
     min-height: 150vh;
   }
-  .parallaxClouds {
+
+.parallaxClouds {
     background-image: url("assets/cloudsparallax.jpg");
     height: 100px;
 
@@ -78,18 +88,41 @@ footer {
     min-height: 150vh;
   }
   
+  /* color schemes for : */
+  .default {
+      background-color: #4B0082
+  }
+  .clouds { 
+      background-color: #586da1;
+   }
+  .clear { 
+      background-color: #b09e17;
+   }
+  .rain { 
+      background-color: #0d1b3d;
+   }
 /* 
-color schemes for :
-base: 
-   head/foot   #4B0082
-   results bg   rgb(109, 107, 112)
-   main content bg color (60, 0, 128)
+   in JS inside the .then response for weather -
+   once this is working, take the default parallax class off the body in html
 
-clouds : 
-clear : 
-rain : 
-   head/foot   #1e3775
+    if (response.weather.main === "clouds")  {
+    footer.addClass("clouds");
+    header.addClass("clouds");
+    $("body").addClass("parallaxClouds");
+   } else
+    if (response.weather.main === "clear")  {
+    footer.addClass("clear");
+    header.addClass("clear");
+    $("body").addClass("parallaxClear");
+   }
+   } else
+    if (response.weather.main === "rain")  {
+    footer.addClass("rain");
+    header.addClass("rain");
+    $("body").addClass("parallaxRain");
+   } else {
+       footer.addClass("default");
+       header.addClass("default"):
+       $("body").addClass("parallax");
+   } */
 
-   parallax apply to bg  rainparallax.jpg
-   main content bg color 
-*/
