@@ -48,3 +48,90 @@ footer {
     margin-top: 15vh;
     background-color: 	#4B0082;
 }
+
+/* parallax and weather-dependent classes  */
+.parallax {
+    background-image: url("assets/parallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vw;
+}
+.parallaxClear {
+    background-image: url("assets/clearparallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vw;
+}
+.parallaxClouds {
+    background-image: url("assets/cloudsparallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vw;
+}
+.parallaxRain {
+    background-image: url("assets/rainparallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vw;
+}
+.default {
+    background-color: #6818d0a6 ;
+}
+.clear {
+    background-color: #d8b700a6 ;
+}
+.clouds {
+    background-color: #5365ada2 ;
+}
+.rain {
+    background-color: #1b1a58b0 ;
+}
+
+/* 
+in js inside weather call function
+
+
+if (response.weather[0].main === "clear") {
+ $("body").removeClass("parallax");
+ $("body").addClass("parallaxClear");
+ $(".top-bar").addClass("clear");
+ $("footer").addClass("clear");
+} 
+if (response.weather[0].main === "clouds") {
+    $("body").removeClass("parallax");
+    $("body").addClass("parallaxClouds");
+    $(".top-bar").addClass("clouds");
+    $("footer").addClass("clouds");
+    
+} 
+if (response.weather[0].main === "rain") {
+    $("body").removeClass("parallax");
+    $("body").addClass("parallaxClouds");
+    $(".top-bar").addClass("rain");
+    $("footer").addClass("rain");
+} 
+
+
+
+
+*/
