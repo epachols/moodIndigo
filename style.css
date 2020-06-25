@@ -7,6 +7,17 @@ body {
     background-image: url();
 }
 
+/* added by Kyle June 25th, 2020 */
+
+h3 {
+    color: #4B0082;
+}
+
+.fas {
+    font-size: 2rem ;
+}
+/* ------------------------------ */
+
 /* the following stylings are for grid setup and should be considered fully replaceable with subsequent foundation styles.  */
 .small-4 {
     background-color: rgb(121, 121, 121)
@@ -37,92 +48,3 @@ footer {
     margin-top: 15vh;
     background-color: 	#4B0082;
 }
-
-
-/* parallax defaults and options */
-
-.parallax {
-    background-image: url("assets/parallax.jpg");
-    height: 100px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 150vh;
-  }
-.parallaxRain {
-    background-image: url("assets/rainparallax.jpg");
-    height: 100px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 150vh;
-  }
-
-.parallaxClear {
-    background-image: url("assets/clearparallax.jpg");
-    height: 100px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 150vh;
-  }
-
-.parallaxClouds {
-    background-image: url("assets/cloudsparallax.jpg");
-    height: 100px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 150vh;
-  }
-  
-  /* color schemes for : */
-  .default {
-      background-color: #4B0082
-  }
-  .clouds { 
-      background-color: #586da1;
-   }
-  .clear { 
-      background-color: #b09e17;
-   }
-  .rain { 
-      background-color: #0d1b3d;
-   }
-/* 
-   in JS inside the .then response for weather -
-   once this is working, take the default parallax class off the body in html
-
-    if (response.weather.main === "clouds")  {
-    footer.addClass("clouds");
-    header.addClass("clouds");
-    $("body").addClass("parallaxClouds");
-   } else
-    if (response.weather.main === "clear")  {
-    footer.addClass("clear");
-    header.addClass("clear");
-    $("body").addClass("parallaxClear");
-   }
-   } else
-    if (response.weather.main === "rain")  {
-    footer.addClass("rain");
-    header.addClass("rain");
-    $("body").addClass("parallaxRain");
-   } else {
-       footer.addClass("default");
-       header.addClass("default"):
-       $("body").addClass("parallax");
-   } */
-
