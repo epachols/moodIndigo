@@ -1,7 +1,7 @@
 //global variables
 let city = []
 
-//Don't move this, needs to run on page load so that it will have the users location data by the time they want to start. 
+//Don't move this, needs to run on page load so that it will have the user's location data by the time they want to start. 
 getLocation();
 
 // // the following is just a test fire of js link
