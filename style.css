@@ -10,7 +10,7 @@ html {
 }
 
 .top-bar {
-    background-color:#6918D0;
+    background-color:	#4B0082;
 }
 #content {
     background-color: rgb(148, 119, 197)
@@ -18,7 +18,7 @@ html {
 
 #results {
     min-height: 50vh;
-    background-color: aquamarine;
+    background-color: rgb(133, 133, 133);
     margin: 5px 5px 5px 5px;
 }
 #welcomeMat {
@@ -26,9 +26,9 @@ html {
     margin-top: 1vh;
 }
 #resultscallouts {
-    background-color: cadetblue;
+    background-color: rgb(60, 0, 128);
 }
 footer {
     margin-top: 15vh;
-    background-color: #6918D0;
+    background-color: 	#4B0082;
 }

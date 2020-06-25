@@ -29,7 +29,7 @@ let sad = [{
 
 let emotion = happy;
 
-// need array for emotions
+// need 3 more arrays for emotions
 // need to make general function that acccepts happy array or sad array
 // randomized the contents of that array
 // pick the first one
@@ -55,3 +55,5 @@ function playlistRandomizer(emotion){
 
 
 playlistRandomizer(emotion);
+
+
