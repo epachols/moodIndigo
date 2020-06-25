@@ -13,6 +13,7 @@
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
+    
     <script
       src="https://kit.fontawesome.com/956330d85a.js"
       crossorigin="anonymous"
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Mood indiGo</title>
   </head>
-  <body>
+  <body class="parallax">
 
     <div class="top-bar">
         <div><h2>Mood Indigo</h2></div>
@@ -39,15 +40,22 @@
           </div> -->
 
         <div class="cell small-3" id="resultscallouts">
-
-          <iframe src="https://open.spotify.com/embed/playlist/0N2pTjZX98Piir6i1VUTzZ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
         </div>
       </div>
 
       <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
-        <div class="cell small-4" >mood selector</div>
         <div class="cell small-4">
-            <button type="button" class="alert button" id="startBtn">Recommend playlists</button>
+          <p class="weatherType"></p>
+          <br>
+          <a class="button radius moodButton" href="#"> <i class="fas fa-smile-beam"></i><p>happy</p></a>
+          <a class="button radius moodButton" href="#"> <i class="fas fa-frown"></i><p>sad</p></a>
+          <a class="button radius moodButton" href="#"> <i class="fas fa-angry"></i><p>angry</p></a>
+          <a class="button radius moodButton" href="#"> <i class="fas fa-heart"></i><p>love</p></a>
+          <a class="button radius moodButton" href="#"> <i class="fas fa-glasses"></i><p>focused</p></a>
+          <a class="button radius moodButton" href="#"> <i class="fas fa-bed"></i><p>sleepy</p></a>
+        </div>
+        <div class="cell small-4 iconHost" >
+            <button type="button" class="black button" id="startBtn">Start Here</button>
 
         </div>
       </div>
@@ -70,6 +78,8 @@
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
       crossorigin="anonymous"
     ></script>
+     <!-- animejs -->
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script> -->
     <!-- moment js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
