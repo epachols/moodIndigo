@@ -3,6 +3,9 @@ html {
     color: gainsboro;
 }
 
+body {
+    background-image: url();
+}
 
 /* the following stylings are for grid setup and should be considered fully replaceable with subsequent foundation styles.  */
 .small-4 {
@@ -26,9 +29,67 @@ html {
     margin-top: 1vh;
 }
 #resultscallouts {
-    background-color: rgb(60, 0, 128);
+    /* background-color: rgb(60, 0, 128); */
+    background-image: url(assets/resultsbg.jpg);
+    margin-top: 15vh;
 }
 footer {
     margin-top: 15vh;
     background-color: 	#4B0082;
 }
+
+
+/* .parallaxClear
+.parallaxClouds
+.parallaxRain */
+
+.parallaxRain {
+    background-image: url("assets/rainparallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 150vh;
+  }
+
+  .parallaxClear {
+    background-image: url("assets/clearparallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 150vh;
+  }
+  .parallaxClouds {
+    background-image: url("assets/cloudsparallax.jpg");
+    height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 150vh;
+  }
+  
+/* 
+color schemes for :
+base: 
+   head/foot   #4B0082
+   results bg   rgb(109, 107, 112)
+   main content bg color (60, 0, 128)
+
+clouds : 
+clear : 
+rain : 
+   head/foot   #1e3775
+
+   parallax apply to bg  rainparallax.jpg
+   main content bg color 
+*/
