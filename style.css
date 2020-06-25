@@ -8,9 +8,12 @@ body {
 }
 
 /* added by Kyle June 25th, 2020 */
-
+h1 {
+    font-family: 'Lobster', cursive;   
+}
 h3 {
-    color: #4B0082;;
+    font-family: 'Lobster', cursive;
+    color: #4B0082;
 }
 
 .fas {
@@ -36,8 +39,8 @@ h3 {
 }
 
 .top-bar {
-    background-color:black;
-    color:  rgb(145, 3, 211);
+    font-family: 'Lobster', cursive;
+    background-color:	#4B0082;
 }
 #content {
     background-color: rgb(82, 0, 224)
@@ -53,11 +56,13 @@ h3 {
     margin-top: 1vh;
 }
 #resultscallouts {
-    /* background-color: rgb(60, 0, 128); */
     background-image: url(assets/resultsbg.jpg);
     margin-top: 15vh;
+    padding-top: 3vh;
+    padding-left: 2vh;
 }
 footer {
+    font-family: 'Pacifico', cursive;
     margin-top: 15vh;
     background-color: 	black;
 }
