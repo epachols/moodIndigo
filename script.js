@@ -142,6 +142,8 @@ let userPreferences = {
     "rain": "",
     "clouds":"" ,
     "clear":"",
+
+    //FUTURE: Allow user to store favorite playlists based on playlist name and then call those back using the name/uri pairs. 
 }
 // need 3 more arrays for emotions
 // need to make general function that acccepts happy array or sad array
@@ -150,9 +152,6 @@ let userPreferences = {
 // plugs in its uri to iframe URL
 // generate iframe via uri plugged in in space selected
 
-//TODO: create list of types of weather
-//TODO: Build an object for the user profile
-//TODO: Build a function to access that object and retrieve a playlist based on the user prefrences on the weather. 
 
 function buildUserProfile(){
     //Will replace empty jQuery with values once design has them implemented
@@ -201,7 +200,7 @@ function playlistRandomizer(emotion){
 //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
 function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + "" + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
     let iconURL = "http://openweathermap.org/img/wn/"
     
     $.ajax({
