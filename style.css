@@ -13,6 +13,14 @@ h3 {
 .fas {
     font-size: 2rem ;
 }
+
+.button {
+    width:120px;
+    height:50px;
+    text-align:center;
+    line-height:1.1em;
+    font-size:1.1em;
+}
 /* ------------------------------ */
 
 /* the following stylings are for grid setup and should be considered fully replaceable with subsequent foundation styles.  */
