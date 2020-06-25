@@ -35,7 +35,7 @@ let sad = [{
 
 let emotion = happy;
 
-// need array for emotions
+// need 3 more arrays for emotions
 // need to make general function that acccepts happy array or sad array
 // randomized the contents of that array
 // pick the first one
@@ -72,6 +72,7 @@ function playlistRandomizer(emotion){
 }
 
 
+<<<<<<< HEAD
 //function will fetch the weather conditions in a given city and the icon associated with that weather condition
 function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"
@@ -97,3 +98,8 @@ function weatherSearch(){
 
 //Temporary to test the weathersearch and getlocation functions
 $("#startBtn").on("click", weatherSearch);
+=======
+playlistRandomizer(emotion);
+
+
+>>>>>>> dev
