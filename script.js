@@ -217,20 +217,23 @@ function weatherSearch(){
 
         //Appends text prompting for user input to the page based on current weather. 
         weatherWelcome = $(".weatherType");
-        $('#theDiv').prepend('<img src="'+fullIconUrl)+'" />'
-
-        if (weatherWelcome == "Clouds"){
-            weatherWelcome.text('Looks like it is cloudy in your neighborhood, does this make you feel:')
-        }
-        else if (weatherWelcome == "Rain"){
-            weatherWelcome.text('Looks like it is raining in your neighborhood, does this make you feel:')
-        }
-        else if (weatherWelcome == "Snow"){
-        weatherWelcome.text('Looks like it is snowing in your neighborhood today, does this make you feel: ');
-        }
-        else{
-            weatherWelcome.text('Looks like there are clear skies in your neighborhood, does this make you feel: ')
-        }
+        
+        $('.iconHost').append('<img id="smallWeatherIcon" src="'+fullIconUrl)+'" />'
+        console.log(fullIconUrl)
+        //will make this text more intuitive later this is just temporary for testing
+        weatherWelcome.text('Current conditions in your area are: '+  weatherType + ' does this make you feel ')
+        // if (weatherWelcome == "Clouds"){
+        //     weatherWelcome.text('Looks like it is cloudy in your neighborhood, does this make you feel:')
+        // }
+        // else if (weatherWelcome == "Rain"){
+        //     weatherWelcome.text('Looks like it is raining in your neighborhood, does this make you feel:')
+        // }
+        // else if (weatherWelcome == "Snow"){
+        // weatherWelcome.text('Looks like it is snowing in your neighborhood today, does this make you feel: ');
+        // }
+        // else{
+        //     weatherWelcome.text('Looks like there are clear skies in your neighborhood, does this make you feel: ')
+        // }
         
         $(".moodButton").show()
         
