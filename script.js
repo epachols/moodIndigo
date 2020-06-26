@@ -228,6 +228,29 @@ function weatherSearch(){
 
         $(".moodButton").show()
         
+        if (weatherType === "Clear") {
+            $("body").removeClass("parallax");
+            $("body").addClass("parallaxClear");
+            $(".top-bar").addClass("clear1");
+            $("footer").addClass("clear1");
+            $("button").addClass("clear1");
+            $(".moodButton").addClass("clear1");
+        } else if (weatherType === "Clouds") {
+            $("body").removeClass("parallax");
+            $("body").addClass("parallaxClouds");
+            $(".top-bar").addClass("clouds");
+            $("footer").addClass("clouds");
+            $("button").addClass("clouds");
+            $(".moodButton").addClass("clouds");
+            
+        } else if (weatherType === "Rain") {
+            $("body").removeClass("parallax");
+            $("body").addClass("parallaxRain");
+            $(".top-bar").addClass("rain");
+            $("footer").addClass("rain");
+            $("button").addClass("rain");
+            $(".moodButton").addClass("rain");
+        } 
     
     })
 }
@@ -267,30 +290,7 @@ $(".moodButton").click(function(){
         
         console.log(weatherType)
         // etp put this part in 6/25, handles conditional weather upon search function.
-        if (weatherType === "Clear") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClear");
-            $(".top-bar").addClass("clear1");
-            $("footer").addClass("clear1");
-            $("button").addClass("clear1");
-            $(".moodButton").addClass("clear1");
-        } else if (response.weather[0].main === "Clouds") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClouds");
-            $(".top-bar").addClass("clouds");
-            $("footer").addClass("clouds");
-            $("button").addClass("clouds");
-            $(".moodButton").addClass("clouds");
-            
-        } else if (response.weather[0].main === "Rain") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClouds");
-            $(".top-bar").addClass("rain");
-            $("footer").addClass("rain");
-            $("button").addClass("rain");
-            $(".moodButton").addClass("rain");
-        } 
-    
+
 
 
 //Temporary to test the weathersearch and getlocation functions
