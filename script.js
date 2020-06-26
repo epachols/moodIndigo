@@ -207,6 +207,16 @@ function playlistRandomizer(mood){
     
     console.log(finalLink);
     songSpace.append(finalLink);
+    // in here ev was working on getting the iframes to flip on arrival, may not be possible as iframes are annoying.
+    // make a div inside resultscallouts, give it the flip in x 
+    // append final link to flipdiv
+    // check if there are n iframes inside div (research)
+    // if more than 4, snip first one.
+    // append flipdiv into songspace
+    // 
+    // let flipDiv = $("<div>").addClass("cell small-3 align-self-middle animate_animated animate__flipInY animate_delay-1s");
+    // songSpace.append(flipDiv);
+    // flipDiv.append(finalLink);
 }
 
 //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
@@ -240,13 +250,14 @@ function weatherSearch(){
         $('#weatherIconHost').append(weatherIcon) 
         
         console.log
-
+        
         //will make this text more intuitive later this is just temporary for testing
         weatherWelcome.text('Looks like it is : '+  weatherType + ' How are you feeling today? ')
-
-        $(".moodButton").show()
         
-        //Applies conditional formatting based on weather conditions returned. 
+        $(".moodButton").show();
+        $(".moodButton").addClass("animate__animated animate__jello animate__delay-1s");
+        
+        // etp put this part in 6/25, handles conditional weather upon search function.
         if (weatherType === "Clear") {
             $("body").removeClass("parallax");
             $("body").addClass("parallaxClear");
@@ -310,7 +321,6 @@ $(".moodButton").click(function(){
         //$(".moodButton").show()
         
         //console.log(weatherType)
-        // etp put this part in 6/25, handles conditional weather upon search function.
 
 
 

@@ -66,8 +66,9 @@ h2 {
     min-height: 10vh;
 }
 
-#content {
-    background-color: rgb(82, 0, 224)
+#floatlogo {
+    font-weight: bold;
+    font-size: 50 px;
 }
 
 #welcomeMat {
