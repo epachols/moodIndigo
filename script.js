@@ -193,7 +193,6 @@ function playlistRandomizer(mood){
     songSpace.append(finalLink);
 }
 
-
 //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
 function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"

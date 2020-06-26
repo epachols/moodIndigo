@@ -48,7 +48,7 @@ h2 {
     font-family: 'Lobster', cursive;
     background-color:black;
     color: ghostwhite;
-    min-height: 8vh
+    min-height: 15vh
 }
 #content {
     background-color: rgb(82, 0, 224)
@@ -142,4 +142,8 @@ footer {
 }
 .rain {
     background-color: #121141 ;
+}
+iframe {
+    padding: 1px;
+    margin: 3vh 3vw;
 }
