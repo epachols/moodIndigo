@@ -236,7 +236,7 @@ function weatherSearch(){
         // }
         
         $(".moodButton").show()
-        
+
         console.log(weatherType)
         // etp put this part in 6/25, handles conditional weather upon search function.
         if (weatherType === "Clear") {
@@ -256,7 +256,7 @@ function weatherSearch(){
             
         } else if (response.weather[0].main === "Rain") {
             $("body").removeClass("parallax");
-            $("body").addClass("parallaxClouds");
+            $("body").addClass("parallaxRain");
             $(".top-bar").addClass("rain");
             $("footer").addClass("rain");
             $("button").addClass("rain");
