@@ -23,12 +23,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- link for css stylesheet  -->
     <link rel="stylesheet" href="style.css" />
+    <!-- linking animate.css  -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
     <title>Mood indiGo</title>
+
   </head>
   <body class="parallax">
 
     <div class="top-bar">
-        <div><h2>Mood Indigo</h2></div>
+        <div class="wrapper">
+          <h2>Mood Indigo</h2>
+        </div>
         <h5 class="top-bar-right stacked-for-medium">Where mood & music meet weather</h5>
     </div>
 
@@ -39,17 +47,11 @@
       </div>
       <div class="grid-x grid-padding-x align-right">
           <div class="cell align-center text-center iconHost">
-            <button type="button" class="black button" id="startBtn">Start Here</button>
+            <button type="button" class="black button" id="startBtn">Let's Begin</button>
         </div>
       </div>
       
       <!-- grid-x on a div will put all the things inside it into a row, grid-y will put it into columns -->
-      <!-- <div class="grid-x grid-margin-y grid-margin-x align-around" id="content">
-        <div class="cell small-7 flex-container flex-dir-column">
-            <div class="callout primary flex-child-auto">callout for each object in return array</div>
-            <div class="callout primary flex-child-auto">callout for each object in return array</div>
-            <div class="callout primary flex-child-shrink">callout for each object in return array</div>
-          </div> -->
 
         <div class="grid-x none" id="resultscallouts">
         </div>

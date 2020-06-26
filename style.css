@@ -63,16 +63,14 @@ h2 {
     font-family: 'Lobster', cursive;
     background-color:black;
     color: ghostwhite;
-    min-height: 8vh
-}
-#content {
-    background-color: rgb(82, 0, 224)
+    min-height: 10vh;
 }
 
-/* #results {
-    min-height: 50vh;
-    background-color: rgb(133, 133, 133);
-} */
+#floatlogo {
+    font-weight: bold;
+    font-size: 50 px;
+}
+
 #welcomeMat {
     /* background-color: rgba(131, 129, 134, 0.664); */
     margin-top: 1vh;
@@ -80,10 +78,15 @@ h2 {
 #resultscallouts {
     /* background-image: url(assets/resultsbg.jpg); */
     margin-top: 25vh;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     padding-top: 3vh;
     padding-left: 2vh;
     padding-bottom: 3vh;
+}
+
+iframe {
+    padding: 1px;
+    margin: 3vh 3vw;
 }
 
 /* =================handling radio tower============ maybe landing ============= */
