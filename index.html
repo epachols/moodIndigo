@@ -34,6 +34,15 @@
 
     <!-- main content goes in individual grid divs, can put them in a container called grid-container fluid later if need-->
     <main>
+      <div class="grid-x grid-padding-x align-center-middle">
+        <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
+      </div>
+      <div class="grid-x grid-padding-x align-right">
+          <div class="cell align-center text-center iconHost">
+            <button type="button" class="black button" id="startBtn">Start Here</button>
+        </div>
+      </div>
+      
       <!-- grid-x on a div will put all the things inside it into a row, grid-y will put it into columns -->
       <!-- <div class="grid-x grid-margin-y grid-margin-x align-around" id="content">
         <div class="cell small-7 flex-container flex-dir-column">
@@ -42,25 +51,19 @@
             <div class="callout primary flex-child-shrink">callout for each object in return array</div>
           </div> -->
 
-        <div class="grid-x" id="resultscallouts">
+        <div class="grid-x none" id="resultscallouts">
         </div>
       </div>
 
       <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
-        <div class="cell small-5">
-          <p class="weatherType"></p>
-          <br>
+        <div class="cell align-center text-center">
           <div id="weatherIconHost"></div>
-          <a class="button radius moodButton" mood-data="happy" href="#"> <i class="fas fa-smile-beam"></i><p>happy</p></a>
-          <a class="button radius moodButton" mood-data="sad" href="#"> <i class="fas fa-frown"></i><p>sad</p></a>
-          <a class="button radius moodButton" mood-data="angry"  href="#"> <i class="fas fa-angry"></i><p>angry</p></a>
-          <a class="button radius moodButton" mood-data="love"  href="#"> <i class="fas fa-heart"></i><p>love</p></a>
-          <a class="button radius moodButton" mood-data="focused"  href="#"> <i class="fas fa-glasses"></i><p>focused</p></a>
-          <a class="button radius moodButton" mood-data="sleepy"  href="#"> <i class="fas fa-bed"></i><p>sleepy</p></a>
-        </div>
-        <div class="cell small-4 iconHost" >
-            <button type="button" class="black button" id="startBtn">Start Here</button>
-
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
         </div>
       </div>
       <div id="radioTower">

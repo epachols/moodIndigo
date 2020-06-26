@@ -8,6 +8,20 @@ getLocation();
 //hides user input prompts until the user clicks a button to start, we still need to add a different button other than reccomend playlists to start the user experience. 
 $(".moodButton").hide()
 
+// ...........................................................
+function welcome (){
+    $("#startBtn").hide();
+    $("#weatherTop").show();
+}
+
+function music (){
+    $("#resultscallouts").show();
+}
+
+//   ..................................................
+
+
+
 // // the following is just a test fire of js link
 // $("body").prepend($("<p>").text("HOWDY"));
 
@@ -229,7 +243,7 @@ function weatherSearch(){
         console.log
 
         //will make this text more intuitive later this is just temporary for testing
-        weatherWelcome.text('Current conditions in your area are: '+  weatherType + ' does this make you feel ')
+        weatherWelcome.text('Looks like it is : '+  weatherType + ' How are you feeling today? ')
 
         $(".moodButton").show()
         
@@ -263,11 +277,13 @@ function weatherSearch(){
 
 //Temporary to test the weathersearch and getlocation functions
 $("#startBtn").on("click", weatherSearch);
+$("#startBtn").on("click", welcome);
 
 $(".moodButton").click(function(){
     //Hide the mood buttons after user input has been taken in
-    $(".moodButton").hide()
-    $(".weatherType").hide()
+    $("#resultscallouts").show();
+    // $(".moodButton").hide()
+    // $(".weatherType").hide()
 
     //Capture current mood data from the clicked mood button and scope it globally for later use.
     mood = $(this).attr("mood-data");
@@ -299,8 +315,6 @@ $(".moodButton").click(function(){
 
 
 
-//Temporary to test the weathersearch and getlocation functions
-$("#startBtn").on("click", weatherSearch);
 
 
 
