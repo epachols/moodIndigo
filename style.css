@@ -46,9 +46,9 @@ h2 {
     background-color: rgb(33, 2, 56);
 }
 
-.iconHost {
+/* .iconHost {
     margin: 10vh 0
-}
+} */
 
 
 
@@ -78,7 +78,7 @@ h2 {
     margin-top: 1vh;
 }
 #resultscallouts {
-    background-image: url(assets/resultsbg.jpg);
+    /* background-image: url(assets/resultsbg.jpg); */
     margin-top: 25vh;
     margin-bottom: 5vh;
     padding-top: 3vh;
@@ -153,8 +153,8 @@ footer {
     background-color: #e9ca19 ;
 }
 .clouds {
-    background-color: #5365ada2 ;
+    background-color: #4e64bde3 ;
 }
 .rain {
-    background-color: #1b1a58b0 ;
+    background-color: #121141 ;
 }

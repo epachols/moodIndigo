@@ -34,8 +34,8 @@
 
     <!-- main content goes in individual grid divs, can put them in a container called grid-container fluid later if need-->
     <main>
-      <div class="grid-x grid-padding-x align-center-middle"> <!-- Aligned to center -->
-        <div class="cell welcomeWeather align-center text-center none" id="weatherTop">Weather is this today (display none until click button)</div>
+      <div class="grid-x grid-padding-x align-center-middle">
+        <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
       </div>
       <div class="grid-x grid-padding-x align-right">
           <div class="cell align-center text-center iconHost">
@@ -57,14 +57,13 @@
 
       <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
         <div class="cell align-center text-center">
-          <p class="weatherType"></p>
-          <br>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-smile-beam"></i><p>happy</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-frown"></i><p>sad</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-angry"></i><p>angry</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-heart"></i><p>love</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-glasses"></i><p>focused</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-bed"></i><p>sleepy</p></a>
+          <div id="weatherIconHost"></div>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
         </div>
       </div>
       <div id="radioTower">

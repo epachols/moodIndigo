@@ -1,6 +1,7 @@
 //global variables
 let city = []
 
+
 //Don't move this, needs to run on page load so that it will have the user's location data by the time they want to start. 
 getLocation();
 
@@ -9,7 +10,7 @@ $(".moodButton").hide()
 
 // ...........................................................
 function welcome (){
-    $("#startBtn").hide( "slow" );
+    $("#startBtn").hide();
     $("#weatherTop").show();
 }
 
@@ -24,7 +25,7 @@ function music (){
 // // the following is just a test fire of js link
 // $("body").prepend($("<p>").text("HOWDY"));
 
-var happy = [{
+let happy = [{
     "name": "happyBeats",
     "uri": "37i9dQZF1DWSf2RDTDayIx"
 },
@@ -47,7 +48,7 @@ var happy = [{
 {
 }]
 
-var sad = [{
+let sad = [{
     "name": "sadCry",
     "uri": "7ABD15iASBIpPP5uJ5awvq"
 },
@@ -68,7 +69,7 @@ var sad = [{
     "uri": "37i9dQZF1DX64Y3du11rR1"
 }]
 
-var angry = [{
+let angry = [{
     "name": "angryRap",
     "uri": "6oxSqwtAseyUm65MWl8JEM"
 },
@@ -89,7 +90,7 @@ var angry = [{
     "uri": "4QUNlh17SkjMlcZ9Z9Z9IK"
 }]
 
-var sleepy = [{
+let sleepy = [{
     "name": "sleepPiano",
     "uri": "37i9dQZF1DX4sWSpwq3LiO"
 },
@@ -110,7 +111,7 @@ var sleepy = [{
     "uri": "37i9dQZF1DX1n9whBbBKoL"
 }]
 
-var love = [{
+let love = [{
     "name": "loveChill",
     "uri": "4QuJ2DbcTe7R8lzqfNXz7v"
 },
@@ -131,7 +132,7 @@ var love = [{
     "uri": "7i9dQZF1DWSRc3WJklgBs"
 }]
 
-var focused = [{
+let focused = [{
     "name": "focusBeats",
     "uri": "37i9dQZF1DWWQRwui0ExPn"
 },
@@ -152,41 +153,34 @@ var focused = [{
     "uri": "37i9dQZF1DX0jgyAiPl8Af"
 }]
 
-let emotion = happy;
+
+//Not yet in use. 
+// let userPreferences = {
+//     "rain": "",
+//     "clouds":"" ,
+//     "clear":"",
+// }
 
 
-let userPreferences = {
-    "rain": "",
-    "clouds":"" ,
-    "clear":"",
-}
-// need 3 more arrays for emotions
-// need to make general function that acccepts happy array or sad array
-// randomized the contents of that array
-// pick the first one
-// plugs in its uri to iframe URL
-// generate iframe via uri plugged in in space selected
+//May possibly delete, not sure if this is going to be needed. 
+// function buildUserProfile(){
+//     //Will replace empty jQuery with values once design has them implemented
+//     rainEmotion = $("").val().trim();
+//     clearSunnyEmotion = $("").val().trim();
+//     cloudyEmotion = $("").val().trim();
 
+//     userPreferences.rain = rainEmotion;
+//     userPreferences.clear = clearSunnyEmotion;
+//     userPreferences.clouds = cloudyEmotion;
 
+// }
 
-function buildUserProfile(){
-    //Will replace empty jQuery with values once design has them implemented
-    rainEmotion = $("").val().trim();
-    clearSunnyEmotion = $("").val().trim();
-    cloudyEmotion = $("").val().trim();
-
-    userPreferences.rain = rainEmotion;
-    userPreferences.clear = clearSunnyEmotion;
-    userPreferences.clouds = cloudyEmotion;
-
-}
-    
 
 
 function getLocation(){
     //Grabs users general location based on IP address
     $.ajax({
-        url:'http://ip-api.com/json',
+        url:'https://ipapi.co/json/',
         method: "GET"
     }).then(function(response){
         cityName = response.city
@@ -195,12 +189,15 @@ function getLocation(){
     })
 }
 
-function playlistRandomizer(emotion){
-    //randomly selects a name/url pair by generating a random number and using it as the index number to access a name and uri pair from whichever emotion object is passed into it.
-     let listSelector = Math.floor(Math.random() * Math.floor(emotion.length));
-     let nameSelected = emotion[listSelector].name
-     let uriSelected = emotion[listSelector].uri
 
+function playlistRandomizer(mood){
+    //randomly selects a name/url pair by generating a random number and using it as the index number to access a name and uri pair from whichever emotion object is passed into it.
+    
+     let listSelector = Math.floor(Math.random() * Math.floor(mood.length - 1));
+     let nameSelected = mood[listSelector].name 
+     let uriSelected = mood[listSelector].uri
+
+     console.log(listSelector,nameSelected,uriSelected)
     //Appends a random playlist to the page from whatever emotion is passsed in/
     let songSpace = $("#resultscallouts")
     let spotifyfirst = '<iframe src="https://open.spotify.com/embed/playlist/'
@@ -208,7 +205,8 @@ function playlistRandomizer(emotion){
     let spotifyLast = ' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
     let finalLink = spotifyfirst + uriInsert + spotifyLast
     
-    songSpace.append(finalLink)
+    console.log(finalLink);
+    songSpace.append(finalLink);
 }
 
 
@@ -216,27 +214,88 @@ function playlistRandomizer(emotion){
 function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"
     let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
-    let iconURL = "http://openweathermap.org/img/wn/"
-    
+    let iconURL = "https://openweathermap.org/img/wn/"
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response){
         //Returns weather conditions in a string ex: sunny, cloudy, raining etc. 
+
         let weatherType = response.weather[0].main;
         //Grabs the id of the icon associated with the current weather conditions
+
         let iconLoc = response.weather[0].icon;
+
         //concatenates the standard url for the icons with the id of the icon associated with the current weather and puts it into a usable image source link
+
         let fullIconUrl= iconURL + iconLoc + "@2x.png";
 
         //Appends text prompting for user input to the page based on current weather. 
+
         weatherWelcome = $(".weatherType");
         
-        $('.iconHost').append('<img id="smallWeatherIcon" src="'+fullIconUrl)+'" />'
+        //This needs to be fixed is not currently working but is not a top tier priority
         console.log(fullIconUrl)
+        weatherIcon = $('<img>',{id:'weatherIcon',src:fullIconUrl})
+        $('#weatherIconHost').append(weatherIcon) 
+        
+        console.log
+
         //will make this text more intuitive later this is just temporary for testing
-        weatherWelcome.text('Current conditions in your area are: '+  weatherType + ' does this make you feel ')
-        // if (weatherWelcome == "Clouds"){
+        weatherWelcome.text('Looks like it is : '+  weatherType + ' How are you feeling today? ')
+
+        $(".moodButton").show()
+        
+        //Applies conditional formatting based on weather conditions returned. 
+        if (weatherType === "Clear") {
+            $("body").removeClass("parallax");
+            $("body").addClass("parallaxClear");
+            $(".top-bar").addClass("clear1");
+            $("footer").addClass("clear1");
+            $("button").addClass("clear1");
+            $(".moodButton").addClass("clear1");
+        } else if (weatherType === "Clouds") {
+            $("body").removeClass("parallax");
+            $("body").addClass("parallaxClouds");
+            $(".top-bar").addClass("clouds");
+            $("footer").addClass("clouds");
+            $("button").addClass("clouds");
+            $(".moodButton").addClass("clouds");
+            
+        } else if (weatherType === "Rain") {
+            $("body").removeClass("parallax");
+            $("body").addClass("parallaxRain");
+            $(".top-bar").addClass("rain");
+            $("footer").addClass("rain");
+            $("button").addClass("rain");
+            $(".moodButton").addClass("rain");
+        } 
+    
+    })
+}
+
+//Temporary to test the weathersearch and getlocation functions
+$("#startBtn").on("click", weatherSearch);
+$("#startBtn").on("click", welcome);
+
+$(".moodButton").click(function(){
+    //Hide the mood buttons after user input has been taken in
+    $("#resultscallouts").show();
+    // $(".moodButton").hide()
+    // $(".weatherType").hide()
+
+    //Capture current mood data from the clicked mood button and scope it globally for later use.
+    mood = $(this).attr("mood-data");
+    
+    //Pass  
+    playlistRandomizer(eval(mood))
+})
+
+
+//IGNORE ME: temporarily moving this out of the way of working in the weather function.
+
+ // if (weatherWelcome == "Clouds"){
         //     weatherWelcome.text('Looks like it is cloudy in your neighborhood, does this make you feel:')
         // }
         // else if (weatherWelcome == "Rain"){
@@ -249,39 +308,13 @@ function weatherSearch(){
         //     weatherWelcome.text('Looks like there are clear skies in your neighborhood, does this make you feel: ')
         // }
         
-        $(".moodButton").show()
+        //$(".moodButton").show()
         
-        console.log(weatherType)
+        //console.log(weatherType)
         // etp put this part in 6/25, handles conditional weather upon search function.
-        if (weatherType === "Clear") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClear");
-            $(".top-bar").addClass("clear1");
-            $("footer").addClass("clear1");
-            $("button").addClass("clear1");
-            $(".moodButton").addClass("clear1");
-        } else if (response.weather[0].main === "Clouds") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClouds");
-            $(".top-bar").addClass("clouds");
-            $("footer").addClass("clouds");
-            $("button").addClass("clouds");
-            $(".moodButton").addClass("clouds");
-            
-        } else if (response.weather[0].main === "Rain") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClouds");
-            $(".top-bar").addClass("rain");
-            $("footer").addClass("rain");
-            $("button").addClass("rain");
-            $(".moodButton").addClass("rain");
-        } 
-    })
-}
 
-//Temporary to test the weathersearch and getlocation functions
-$("#startBtn").on("click", weatherSearch);
-$("#startBtn").on("click", welcome);
-playlistRandomizer(emotion);
+
+
+
 
 
