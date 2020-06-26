@@ -23,44 +23,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- link for css stylesheet  -->
     <link rel="stylesheet" href="style.css" />
+    <!-- linking animate.css  -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
     <title>Mood indiGo</title>
+
   </head>
   <body class="parallax">
 
     <div class="top-bar">
-        <div><h2>Mood Indigo</h2></div>
-        <h5 class="top-bar-right stacked-for-medium subheader">Where mood & music meet weather</h5>
+        <div class="wrapper">
+          <h2>Mood Indigo</h2>
+        </div>
+        <h5 class="top-bar-right stacked-for-medium">Where mood & music meet weather</h5>
     </div>
 
     <!-- main content goes in individual grid divs, can put them in a container called grid-container fluid later if need-->
     <main>
+      <div class="grid-x grid-padding-x align-center-middle">
+        <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
+      </div>
+      <div class="grid-x grid-padding-x align-right">
+          <div class="cell align-center text-center iconHost">
+            <button type="button" class="black button" id="startBtn">Let's Begin</button>
+        </div>
+      </div>
+      
       <!-- grid-x on a div will put all the things inside it into a row, grid-y will put it into columns -->
-      <!-- <div class="grid-x grid-margin-y grid-margin-x align-around" id="content">
-        <div class="cell small-7 flex-container flex-dir-column">
-            <div class="callout primary flex-child-auto">callout for each object in return array</div>
-            <div class="callout primary flex-child-auto">callout for each object in return array</div>
-            <div class="callout primary flex-child-shrink">callout for each object in return array</div>
-          </div> -->
 
-        <div class="cell small-3" id="resultscallouts">
+        <div class="grid-x none" id="resultscallouts">
         </div>
       </div>
 
       <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
-        <div class="cell small-4">
-          <p class="weatherType"></p>
-          <br>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-smile-beam"></i><p>happy</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-frown"></i><p>sad</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-angry"></i><p>angry</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-heart"></i><p>love</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-glasses"></i><p>focused</p></a>
-          <a class="button radius moodButton" href="#"> <i class="fas fa-bed"></i><p>sleepy</p></a>
+        <div class="cell align-center text-center">
+          <div id="weatherIconHost"></div>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
+          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
         </div>
-        <div class="cell small-4 iconHost" >
-            <button type="button" class="black button" id="startBtn">Start Here</button>
-
-        </div>
+      </div>
+      <div id="radioTower">
+        <img src="assets/radtower2.png" width="200" height="350" alt="Mood Indigo Tower">
       </div>
     </main>
 
@@ -68,7 +77,7 @@
         <div class="grid-x align-center"> 
           <h3>moodIndigo</h3>
           <div class="grid-y" id="devsLink">
-            <a href="http://" target="_blank" rel="noopener noreferrer">dev team</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">dev team</a>
           </div>
          </div>  
     </footer>
