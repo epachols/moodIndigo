@@ -29,7 +29,7 @@
 
     <div class="top-bar">
         <div><h2>Mood Indigo</h2></div>
-        <h5 class="top-bar-right stacked-for-medium subheader">Where mood & music meet weather</h5>
+        <h5 class="top-bar-right stacked-for-medium">Where mood & music meet weather</h5>
     </div>
 
     <!-- main content goes in individual grid divs, can put them in a container called grid-container fluid later if need-->
@@ -42,12 +42,12 @@
             <div class="callout primary flex-child-shrink">callout for each object in return array</div>
           </div> -->
 
-        <div class="cell small-3" id="resultscallouts">
+        <div class="grid-x" id="resultscallouts">
         </div>
       </div>
 
       <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
-        <div class="cell small-4">
+        <div class="cell small-5">
           <p class="weatherType"></p>
           <br>
           <a class="button radius moodButton" mood-data="happy" href="#"> <i class="fas fa-smile-beam"></i><p>happy</p></a>
@@ -62,13 +62,16 @@
 
         </div>
       </div>
+      <div id="radioTower">
+        <img src="assets/radtower2.png" width="200" height="350" alt="Mood Indigo Tower">
+      </div>
     </main>
 
     <footer>
         <div class="grid-x align-center"> 
           <h3>moodIndigo</h3>
           <div class="grid-y" id="devsLink">
-            <a href="http://" target="_blank" rel="noopener noreferrer">dev team</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">dev team</a>
           </div>
          </div>  
     </footer>

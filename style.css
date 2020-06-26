@@ -1,17 +1,23 @@
 html {
-    background-color: rgb(144, 97, 219);
+    background-color: rgb(0, 0, 0);
     color: gainsboro;
 }
 
 body {
     background-image: url();
 }
-
+main {
+    min-height: 100vh;
+}
 /* added by Kyle June 25th, 2020 */
 h1 {
     font-family: 'Lobster', cursive;   
 }
 h3 {
+    font-family: 'Lobster', cursive;
+    color: #4B0082;
+}
+h2 {
     font-family: 'Lobster', cursive;
     color: #4B0082;
 }
@@ -40,83 +46,96 @@ h3 {
 
 .top-bar {
     font-family: 'Lobster', cursive;
-    background-color:	#4B0082;
+    background-color:black;
+    color: ghostwhite;
+    min-height: 8vh
 }
 #content {
     background-color: rgb(82, 0, 224)
 }
 
-#results {
+/* #results {
     min-height: 50vh;
     background-color: rgb(133, 133, 133);
-    margin: 5px 5px 5px 5px;
-}
+} */
 #welcomeMat {
-    background-color: rgb(109, 107, 112);
+    background-color: rgba(131, 129, 134, 0.664);
     margin-top: 1vh;
 }
 #resultscallouts {
     background-image: url(assets/resultsbg.jpg);
-    margin-top: 15vh;
+    margin-top: 25vh;
+    margin-bottom: 5vh;
     padding-top: 3vh;
     padding-left: 2vh;
+    padding-bottom: 3vh;
 }
+
+/* =================handling radio tower============ maybe landing ============= */
+#radioTower {
+    position: absolute;
+    margin-left: 10vw;
+    margin-bottom: -50px;
+    min-height: 10vh;
+    max-height: 30vh;
+}
+
 footer {
     font-family: 'Pacifico', cursive;
     margin-top: 15vh;
     background-color: 	black;
 }
 
-/* parallax and weather-dependent classes  */
+/* parallax and weather-dependent classes - input by EV on 6/25  */
 .parallax {
     background-image: url("assets/parallax.jpg");
-    height: 100px;
+    height: 400px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vw;
+    min-height: 150vh;
 }
 .parallaxClear {
     background-image: url("assets/clearparallax.jpg");
-    height: 100px;
+    height: 400px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vw;
+    min-height: 150vh;
 }
 .parallaxClouds {
     background-image: url("assets/cloudsparallax.jpg");
-    height: 100px;
+    height: 400px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vw;
+    min-height: 150vh;
 }
 .parallaxRain {
     background-image: url("assets/rainparallax.jpg");
-    height: 100px;
+    height: 400px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vw;
+    min-height: 150vh;
 }
 .default {
     background-color: #6818d0a6 ;
 }
-.clear {
-    background-color: #d8b700a6 ;
+.clear1 {
+    background-color: #e9ca19 ;
 }
 .clouds {
     background-color: #5365ada2 ;
@@ -124,32 +143,3 @@ footer {
 .rain {
     background-color: #1b1a58b0 ;
 }
-
-/* 
-in js inside weather call function
-
-
-if (response.weather[0].main === "clear") {
- $("body").removeClass("parallax");
- $("body").addClass("parallaxClear");
- $(".top-bar").addClass("clear");
- $("footer").addClass("clear");
-} 
-if (response.weather[0].main === "clouds") {
-    $("body").removeClass("parallax");
-    $("body").addClass("parallaxClouds");
-    $(".top-bar").addClass("clouds");
-    $("footer").addClass("clouds");
-    
-} 
-if (response.weather[0].main === "rain") {
-    $("body").removeClass("parallax");
-    $("body").addClass("parallaxClouds");
-    $(".top-bar").addClass("rain");
-    $("footer").addClass("rain");
-} 
-
-
-
-
-*/
