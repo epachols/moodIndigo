@@ -140,31 +140,33 @@ let focused = [{
 }]
 
 
-let userPreferences = {
-    "rain": "",
-    "clouds":"" ,
-    "clear":"",
-}
+//Not yet in use. 
+// let userPreferences = {
+//     "rain": "",
+//     "clouds":"" ,
+//     "clear":"",
+// }
 
 
-function buildUserProfile(){
-    //Will replace empty jQuery with values once design has them implemented
-    rainEmotion = $("").val().trim();
-    clearSunnyEmotion = $("").val().trim();
-    cloudyEmotion = $("").val().trim();
+//May possibly delete, not sure if this is going to be needed. 
+// function buildUserProfile(){
+//     //Will replace empty jQuery with values once design has them implemented
+//     rainEmotion = $("").val().trim();
+//     clearSunnyEmotion = $("").val().trim();
+//     cloudyEmotion = $("").val().trim();
 
-    userPreferences.rain = rainEmotion;
-    userPreferences.clear = clearSunnyEmotion;
-    userPreferences.clouds = cloudyEmotion;
+//     userPreferences.rain = rainEmotion;
+//     userPreferences.clear = clearSunnyEmotion;
+//     userPreferences.clouds = cloudyEmotion;
 
-}
+// }
 
 
 
 function getLocation(){
     //Grabs users general location based on IP address
     $.ajax({
-        url:'http://ip-api.com/json',
+        url:'https://ipapi.co/json/',
         method: "GET"
     }).then(function(response){
         cityName = response.city
@@ -177,7 +179,7 @@ function getLocation(){
 function playlistRandomizer(mood){
     //randomly selects a name/url pair by generating a random number and using it as the index number to access a name and uri pair from whichever emotion object is passed into it.
     
-     let listSelector = Math.floor(Math.random() * Math.floor(mood.length));
+     let listSelector = Math.floor(Math.random() * Math.floor(mood.length - 1));
      let nameSelected = mood[listSelector].name 
      let uriSelected = mood[listSelector].uri
 
@@ -218,16 +220,20 @@ function weatherSearch(){
         //Appends text prompting for user input to the page based on current weather. 
 
         weatherWelcome = $(".weatherType");
-        //This needs to be fixed is not currently working but is not a top tier priority
-
-        $('.iconHost').append('<img id="smallWeatherIcon" src="'+fullIconUrl)+'" />'
         
+        //This needs to be fixed is not currently working but is not a top tier priority
+        console.log(fullIconUrl)
+        weatherIcon = $('<img>',{id:'weatherIcon',src:fullIconUrl})
+        $('#weatherIconHost').append(weatherIcon) 
+        
+        console.log
 
         //will make this text more intuitive later this is just temporary for testing
         weatherWelcome.text('Current conditions in your area are: '+  weatherType + ' does this make you feel ')
 
         $(".moodButton").show()
         
+        //Applies conditional formatting based on weather conditions returned. 
         if (weatherType === "Clear") {
             $("body").removeClass("parallax");
             $("body").addClass("parallaxClear");
@@ -288,13 +294,13 @@ $(".moodButton").click(function(){
         
         //$(".moodButton").show()
         
-        console.log(weatherType)
+        //console.log(weatherType)
         // etp put this part in 6/25, handles conditional weather upon search function.
 
 
 
 //Temporary to test the weathersearch and getlocation functions
 $("#startBtn").on("click", weatherSearch);
-playlistRandomizer(emotion);
+
 
 
