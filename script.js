@@ -7,6 +7,20 @@ getLocation();
 //hides user input prompts until the user clicks a button to start, we still need to add a different button other than reccomend playlists to start the user experience. 
 $(".moodButton").hide()
 
+// ...........................................................
+function welcome (){
+    $("#startBtn").hide( "slow" );
+    $("#weatherTop").show();
+}
+
+function music (){
+    $("#resultscallouts").show();
+}
+
+//   ..................................................
+
+
+
 // // the following is just a test fire of js link
 // $("body").prepend($("<p>").text("HOWDY"));
 
@@ -267,6 +281,7 @@ function weatherSearch(){
 
 //Temporary to test the weathersearch and getlocation functions
 $("#startBtn").on("click", weatherSearch);
+$("#startBtn").on("click", welcome);
 playlistRandomizer(emotion);
 
 
