@@ -9,7 +9,18 @@ body {
 main {
     min-height: 100vh;
 }
-/* added by Kyle June 25th, 2020 */
+
+.none {
+    display: none;
+}
+
+.welcomeWeather {
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 2rem;
+    padding-top: 1em;
+}
+
 h1 {
     font-family: 'Lobster', cursive;   
 }
@@ -35,14 +46,18 @@ h2 {
     background-color: rgb(33, 2, 56);
 }
 
+/* .iconHost {
+    margin: 10vh 0
+} */
 
-/* ------------------------------ */
+
 
 /* the following stylings are for grid setup and should be considered fully replaceable with subsequent foundation styles.  */
 .small-4 {
     background-color: rgb(121, 121, 121);
     
 }
+
 
 .top-bar {
     font-family: 'Lobster', cursive;
@@ -56,11 +71,11 @@ h2 {
 }
 
 #welcomeMat {
-    background-color: rgba(131, 129, 134, 0.664);
+    /* background-color: rgba(131, 129, 134, 0.664); */
     margin-top: 1vh;
 }
 #resultscallouts {
-    background-image: url(assets/resultsbg.jpg);
+    /* background-image: url(assets/resultsbg.jpg); */
     margin-top: 25vh;
     margin-bottom: 2vh;
     padding-top: 3vh;
