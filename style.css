@@ -91,11 +91,12 @@ iframe {
 
 /* =================handling radio tower============ maybe landing ============= */
 #radioTower {
-    position: absolute;
+    /* position: absolute; */
     margin-left: 10vw;
     margin-bottom: -50px;
     min-height: 10vh;
     max-height: 30vh;
+    z-index: 0;
 }
 
 footer {

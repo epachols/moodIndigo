@@ -11,6 +11,7 @@ $(".moodButton").hide()
 // ...........................................................
 function welcome (){
     $("#startBtn").hide();
+    $("main").removeClass("grid-x grid-padding-x align-center-middle text-center")
     $("#weatherTop").show();
 }
 
