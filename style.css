@@ -2,20 +2,43 @@ html {
     background-color: rgb(0, 0, 0);
     color: gainsboro;
     min-height: 100vh;
+    min-width:100vw;
 }
 
-body, main {
-  min-height:100vh;
+body,
+main {
+    min-height: 100vh;
+    min-width:100vw;
 }
+
+/* 
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(169, 169, 169, 0);
+    outline: 1px solid rgb(212, 220, 228);
+} */
 
 .wrapper {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    
+
 }
+
 .none {
     display: none;
+}
+
+#radTower {
+    width: 200px;
+    height: 40vh;
 }
 
 .welcomeWeather {
@@ -27,143 +50,156 @@ body, main {
 }
 
 h1 {
-    font-family: 'Lobster', cursive;   
+    font-family: 'Lobster', cursive;
 }
+
 h3 {
     font-family: 'Lobster', cursive;
     color: #4B0082;
 }
+
 h2 {
     font-family: 'Lobster', cursive;
-    color: #4B0082;
+    color: #2c0164;
+    text-shadow: whitesmoke;
 }
 
 .fas {
-    font-size: 2rem ;
+    font-size: 2rem;
 }
 
 .button {
-    width:120px;
-    height:100px;
-    text-align:center;
-    line-height:1.1em;
-    font-size:1.1em;
+    width: 120px;
+    height: 80px;
+    text-align: center;
+    line-height: 1.1em;
+    font-size: 1.1em;
     background-color: rgb(33, 2, 56);
+    /* the following line deals with additional curvature of our buttons */
+    border-radius: 40px;
 }
 
+#startBtn {
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    width: 300px;
+    height: 50vh;
+    background-color: rgb(121, 121, 121);
+    border: 2px solid aliceblue 
+
+    /* make button border and fix this with pseudoclasses */
+}
+
+#reset {
+    font-family: 'Lobster', cursive;
+    text-shadow: whitesmoke;
+    margin-top:1vh;
+}
 /* .iconHost {
     margin: 10vh 0
 } */
 
-
-
-/* the following stylings are for grid setup and should be considered fully replaceable with subsequent foundation styles.  */
-.small-4 {
-    background-color: rgb(121, 121, 121);
-    
-}
-
-
 .top-bar {
     font-family: 'Lobster', cursive;
-    background-color:black;
+    background-color: black;
     color: ghostwhite;
     min-height: 10vh;
-}
-
-#floatlogo {
-    font-weight: bold;
-    font-size: 50 px;
 }
 
 #welcomeMat {
     /* background-color: rgba(131, 129, 134, 0.664); */
     margin-top: 1vh;
 }
+
 #resultscallouts {
-    /* background-image: url(assets/resultsbg.jpg); */
     margin-top: 5vh;
     margin-bottom: 2vh;
-    padding-top: 3vh;
-    padding-left: 2vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    padding-top: 1vh;
+    padding-left: 5vh;
     padding-bottom: 3vh;
+
+    /* handles the overflow scrolling  */
+    overflow-y: scroll;
+    height: 65vh;
 }
 
 iframe {
     padding: 1px;
-    margin: 3vh 3vw;
-}
-
-/* =================handling radio tower============ maybe landing ============= */
-#radioTower {
-    /* position: absolute; */
-    margin-left: 10vw;
-    margin-bottom: -50px;
-    min-height: 10vh;
-    max-height: 30vh;
-    z-index: 0;
+    margin: 3vh 2vh;
 }
 
 footer {
     font-family: 'Pacifico', cursive;
-    margin-top: 15vh;
-    background-color: 	black;
+    margin-top: 10vh;
+    background-color: black;
+    height: 10vh;
 }
 
 /* parallax and weather-dependent classes - input by EV on 6/25  */
 .parallax {
-    background-image: url("assets/parallax.jpg");
-    height: 400px;
+    background-image: url("./assets/parallax.jpg");
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 150vh;
+    min-height: 100vh;
 }
+
 .parallaxClear {
-    background-image: url("assets/clearparallax.jpg");
-    height: 400px;
+    background-image: url("./assets/clearparallax.jpg");
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 150vh;
+    min-height: 100vh;
 }
+
 .parallaxClouds {
-    background-image: url("assets/cloudsparallax.jpg");
-    height: 400px;
+    background-image: url("./assets/cloudsparallax.jpg");
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 150vh;
+    min-height: 100vh;
 }
+
 .parallaxRain {
-    background-image: url("assets/rainparallax.jpg");
-    height: 400px;
+    background-image: url("./assets/rainparallax.jpg");
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 150vh;
+    min-height: 100vh;
 }
+
 .default {
-    background-color: #6818d0a6 ;
+    background-color: #6818d0a6;
 }
+
 .clear1 {
-    background-color: #e9ca19 ;
+    background-color: #e9ca19;
 }
+
 .clouds {
-    background-color: #4e64bde3 ;
+    background-color: #4e64bde3;
 }
+
 .rain {
-    background-color: #121141 ;
+    background-color: #121141;
+}
+
+#splash {
+    background-color: rgba(97, 97, 112, 0.801);
+    border-top: rgba(0, 0, 0, 0.671) solid 2px;
+    border-bottom: rgba(0, 0, 0, 0.671) solid 2px;
 }

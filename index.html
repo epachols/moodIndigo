@@ -36,50 +36,91 @@
     <div class="wrapper parallax">
 
       <div class="top-bar">
-      <h2>Mood Indigo</h2>
+        <h1>
+          <span style="color:aliceblue; margin-right:-1vw;">mood</span>
+          <span style="color:rgb(176, 116, 231); font-weight:bold;">:</span>
+          <span style="color:rgb(90, 0, 175); font-weight:bold; margin-left:-1vw;">Indigo</span>
+        </h1>
           <h5 class="top-bar-right stacked-for-medium">Where mood & music meet weather</h5>
       </div>
 
       <main class="grid-x grid-padding-x align-center-middle text-center">
-          <div>
+
+        <!-- the following section handles the welcome banner, which hides itself and then shows the let's begin button -->
+        <div class="cell animate__animated animate__slideInDown animate_slow" id="splash">
+          <h1 class="animate__animated animate__slideInDown">
+            <span style="color:aliceblue; margin-right:-1vw;">mood</span>
+            <span style="color:rgb(176, 116, 231); font-weight:bold;">:</span>
+            <span style="color:rgb(90, 0, 175); font-weight:bold; margin-left:-1vw;" class="animate__animated animate__slideInUp animate__delay-2s">Indigo</span>
+          </h1>
+        </div>
+        
+        <!-- this section handles the start button -->
+        <div>
+          <button type="button" class="button none" id="startBtn">
+            <img src="./assets/radtower2.png" alt="Mood Indigo Tower" id="radTower"><br>
+            Let's Begin!
+          </button>
+        </div>
+
+        <div class="grid-x grid-padding-x align-center-middle">
+          
+          <!-- here is where our weather information shows up -->
+          <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
+        </div>
+        <!-- <div class="grid-x grid-padding-x align-right">
+          <div class="cell align-center text-center iconHost">
             <button type="button" class="black button" id="startBtn">Let's Begin</button>
           </div>
-          <div class="grid-x grid-padding-x align-center-middle">
-            
-            <!-- here is where our weather information shows up -->
-            <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
-          </div>
-          <!-- <div class="grid-x grid-padding-x align-right">
-            <div class="cell align-center text-center iconHost">
-              <button type="button" class="black button" id="startBtn">Let's Begin</button>
-            </div>
-          </div> -->
+        </div> -->
+        
+        <!-- This is where our spotify results return  -->
+        <div class="grid-x align-spaced none" id="resultscallouts">
+        </div>
           
-          <!-- This is where our spotify results return  -->
-          <div class="grid-x none" id="resultscallouts"></div>
-          
-          <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
-            <div class="cell align-center text-center">
-              <div id="weatherIconHost"></div>
-              <div class="grid-x none" id="returnPrefs">How are you feeling?</div>
-              <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
-              <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
-              <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
-              <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
-              <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
-              <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
-            </div>
+        <!-- this is where the buttons live  -->
+        <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
+          <div class="cell align-center text-center">
+            <div id="weatherIconHost"></div>
+            <div class="grid-x none" id="returnPrefs">How are you feeling?</div>
+            <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
+            <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
+            <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
+            <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
+            <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
+            <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
           </div>
-          <!-- <div id="radioTower">
-            <img src="assets/radtower2.png" width="200" height="350" alt="Mood Indigo Tower">
-          </div> -->
-        </main>
+        </div>
+          
+        <div class="grid-x align-spaced">
+          <button class="button none" id="reset"><i class="fas fa-toilet"></i>&nbsp;Reset
+          </button>
+        </div>
+     
+      </main>
+        
+
+
         
         <footer>
-          <div class="grid-x align-center"> 
-            <h3>moodIndigo</h3>
-            <div class="grid-y" id="devsLink">
-              <a href="#" target="_blank" rel="noopener noreferrer">dev team</a>
+          <div style="z-index: 5;" class="grid-x grid-margin-x align-spaced offset-2">
+            <div class="cell-4"></div>
+            <div class="cell-5">
+              <h2>
+                <span style="color:aliceblue; margin-right:-1vw;">mood</span>
+                <span style="color:rgb(176, 116, 231); font-weight:bold;">:</span>
+                <span style="color:rgb(90, 0, 175); font-weight:bold; margin-left:-1vw;">Indigo</span>
+              </h2>
+            </div>
+            <div class="cell-auto">
+              <div id="devsLink">
+                <a href="#" target="_blank" rel="noopener noreferrer">dev team</a>
+                <h1>
+                  <a href="https://github.com/epachols/project1" target="_blank" alt="Github repository">
+                    <i class="fab fa-github-alt" style="color:aliceblue"></i>
+                  </a>
+                </h1>
+              </div>
             </div>
           </div>  
         </footer>
