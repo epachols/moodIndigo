@@ -208,16 +208,6 @@ function playlistRandomizer(mood){
     
     console.log(finalLink);
     songSpace.append(finalLink);
-    // in here ev was working on getting the iframes to flip on arrival, may not be possible as iframes are annoying.
-    // make a div inside resultscallouts, give it the flip in x 
-    // append final link to flipdiv
-    // check if there are n iframes inside div (research)
-    // if more than 4, snip first one.
-    // append flipdiv into songspace
-    // 
-    // let flipDiv = $("<div>").addClass("cell small-3 align-self-middle animate_animated animate__flipInY animate_delay-1s");
-    // songSpace.append(flipDiv);
-    // flipDiv.append(finalLink);
 }
 
 //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
@@ -225,7 +215,9 @@ function weatherSearch(){
     let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial"
     let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
     let iconURL = "https://openweathermap.org/img/wn/"
-
+    
+    console.log(queryURL);
+    
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -260,23 +252,24 @@ function weatherSearch(){
         
         // etp put this part in 6/25, handles conditional weather upon search function.
         if (weatherType === "Clear") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClear");
+            $(".wrapper").removeClass("parallax");
+            $(".wrapper").addClass("parallaxClear");
             $(".top-bar").addClass("clear1");
             $("footer").addClass("clear1");
             $("button").addClass("clear1");
             $(".moodButton").addClass("clear1");
+            
         } else if (weatherType === "Clouds") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxClouds");
+            $(".wrapper").removeClass("parallax");
+            $(".wrapper").addClass("parallaxClouds");
             $(".top-bar").addClass("clouds");
             $("footer").addClass("clouds");
             $("button").addClass("clouds");
             $(".moodButton").addClass("clouds");
             
         } else if (weatherType === "Rain") {
-            $("body").removeClass("parallax");
-            $("body").addClass("parallaxRain");
+            $(".wrapper").removeClass("parallax");
+            $(".wrapper").addClass("parallaxRain");
             $(".top-bar").addClass("rain");
             $("footer").addClass("rain");
             $("button").addClass("rain");
