@@ -36,10 +36,6 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
-#radTower {
-    width: 200px;
-    height: 40vh;
-}
 
 .welcomeWeather {
     font-family: 'Lobster', cursive;
@@ -79,6 +75,10 @@ h2 {
     border-radius: 40px;
 }
 
+#radTower {
+    width: 275px;
+    height: 40vh;
+}
 #startBtn {
     font-family: 'Lobster', cursive;
     font-size: 30px;
@@ -86,7 +86,7 @@ h2 {
     height: 50vh;
     background-color: rgb(121, 121, 121);
     border: 2px solid aliceblue 
-
+    
     /* make button border and fix this with pseudoclasses */
 }
 
@@ -104,6 +104,7 @@ h2 {
     background-color: black;
     color: ghostwhite;
     min-height: 10vh;
+    padding: 0 2vw;
 }
 
 #welcomeMat {
