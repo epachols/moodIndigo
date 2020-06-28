@@ -31,72 +31,71 @@
     <title>Mood indiGo</title>
 
   </head>
-  <body class="parallax">
+  <body>
+    <!-- the wrapper contains all our content, with parallax to steady it -->
+    <div class="wrapper parallax">
 
-    <div class="top-bar">
-        <div class="wrapper">
-          <h2>Mood Indigo</h2>
-        </div>
-        <h5 class="top-bar-right stacked-for-medium">Where mood & music meet weather</h5>
+      <div class="top-bar">
+      <h2>Mood Indigo</h2>
+          <h5 class="top-bar-right stacked-for-medium">Where mood & music meet weather</h5>
+      </div>
+
+      <main class="grid-x grid-padding-x align-center-middle text-center">
+          <div>
+            <button type="button" class="black button" id="startBtn">Let's Begin</button>
+          </div>
+          <div class="grid-x grid-padding-x align-center-middle">
+            
+            <!-- here is where our weather information shows up -->
+            <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
+          </div>
+          <!-- <div class="grid-x grid-padding-x align-right">
+            <div class="cell align-center text-center iconHost">
+              <button type="button" class="black button" id="startBtn">Let's Begin</button>
+            </div>
+          </div> -->
+          
+          <!-- This is where our spotify results return  -->
+          <div class="grid-x none" id="resultscallouts"></div>
+          
+          <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
+            <div class="cell align-center text-center">
+              <div id="weatherIconHost"></div>
+              <div class="grid-x none" id="returnPrefs">How are you feeling?</div>
+              <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
+              <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
+              <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
+              <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
+              <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
+              <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
+            </div>
+          </div>
+          <!-- <div id="radioTower">
+            <img src="assets/radtower2.png" width="200" height="350" alt="Mood Indigo Tower">
+          </div> -->
+        </main>
+        
+        <footer>
+          <div class="grid-x align-center"> 
+            <h3>moodIndigo</h3>
+            <div class="grid-y" id="devsLink">
+              <a href="#" target="_blank" rel="noopener noreferrer">dev team</a>
+            </div>
+          </div>  
+        </footer>
     </div>
 
-    <!-- main content goes in individual grid divs, can put them in a container called grid-container fluid later if need-->
-    <main class="grid-x grid-padding-x align-center-middle text-center">
-      <div>
-        <button type="button" class="black button" id="startBtn">Let's Begin</button>
-      </div>
-      <div class="grid-x grid-padding-x align-center-middle">
-        <div class="cell welcomeWeather align-center text-center weatherType" id="weatherTop"></div>
-      </div>
-      <!-- <div class="grid-x grid-padding-x align-right">
-          <div class="cell align-center text-center iconHost">
-            <button type="button" class="black button" id="startBtn">Let's Begin</button>
-        </div>
-      </div> -->
+  
+      <!-- add in any other libraries we might use -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Compressed JavaScript for foundation -->
+      <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
       
-      <!-- grid-x on a div will put all the things inside it into a row, grid-y will put it into columns -->
-
-        <div class="grid-x none" id="resultscallouts">
-        </div>
-      </div>
-
-      <div class="grid-x grid-margin-y grid-margin-x align-center-middle" id="welcomeMat">
-        <div class="cell align-center text-center">
-          <div id="weatherIconHost"></div>
-          <button type="button" class="button rounded bordered shadow moodButton" mood-data="happy"> <i class="fas fa-smile-beam"></i><p>happy</p></button>
-          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sad"> <i class="fas fa-frown"></i><p>sad</p></button>
-          <button type="button" class="button rounded bordered shadow moodButton" mood-data="angry"> <i class="fas fa-angry"></i><p>angry</p></button>
-          <button type="button" class="button rounded bordered shadow moodButton" mood-data="love"> <i class="fas fa-heart"></i><p>in love</p></button>
-          <button type="button" class="button rounded bordered shadow moodButton" mood-data="focused"> <i class="fas fa-glasses"></i><p>focused</p></button>
-          <button type="button" class="button rounded bordered shadow moodButton" mood-data="sleepy"> <i class="fas fa-bed"></i><p>sleepy</p></button>
-        </div>
-      </div>
-      <div id="radioTower">
-        <img src="assets/radtower2.png" width="200" height="350" alt="Mood Indigo Tower">
-      </div>
-    </main>
-
-    <footer>
-        <div class="grid-x align-center"> 
-          <h3>moodIndigo</h3>
-          <div class="grid-y" id="devsLink">
-            <a href="#" target="_blank" rel="noopener noreferrer">dev team</a>
-          </div>
-         </div>  
-    </footer>
-
-    <!-- add in any other libraries we might use -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Compressed JavaScript for foundation -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
-      crossorigin="anonymous"
-    ></script>
-     <!-- animejs -->
-     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script> -->
+    <!-- animejs -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script> -->
     <!-- moment js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
   </body>
+</div>
 </html>
