@@ -3,6 +3,7 @@ Project #1 – Team 5
 Trilogy – Full Stack Development Program University of Washington Cohort 2020
 
 Team Members:
+
 Evan Pacholski
 
 Kyle Anderson
