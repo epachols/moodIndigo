@@ -1,52 +1,7 @@
 //global variables
 let city = [];
-
-//Don't move this, needs to run on page load so that it will have the user's location data by the time they want to start.
-getLocation();
-
-//hides user input prompts until the user clicks a button to start, we still need to add a different button other than reccomend playlists to start the user experience.
-$(".moodButton").hide();
-$("#localCallout").hide();
-$("#feelsLabel").hide();
-
-// TODO:will need to hide div responsible for callout as well as show it  
-// TODO:will need to hide div responsible for callout as well as show it  
-// TODO:will need to hide div responsible for callout as well as show it  
-// TODO:will need to hide div responsible for callout as well as show it  
-// TODO:will need to hide div responsible for callout as well as show it  
-
-
-
-
-// deals with opening animation (inserted by etp 6/27)
-setTimeout(function () {
-  // making the splash banner disappear on timer
-  $("#splash").removeClass(
-    "animate__animated animate__slideInDown animate_slow"
-  );
-  $("#splash").addClass("animate__animated animate__fadeOut animate_slower");
-  // making the start button animate in on timer
-  $("#startDiv").addClass("animate__animated animate__zoomIn");
-  $("#startDiv").removeClass("none");
-}, 1111);
-
-// ...........................................................
-function welcome() {
-  $("#startDiv").hide();
-  $("main").removeClass(
-    "grid-x grid-padding-x align-center-middle text-center"
-  );
-  $("#weatherTop").show();
-}
-
-function music() {
-  $("#resultscallouts").show();
-}
-
-// .............................................................
 let currentWeather = [];
 let playlistsPicked =[];
-
 
 let happy = [{
   "name": "happyBeats",
@@ -291,178 +246,170 @@ let focused = [{
   "uri": "37i9dQZF1DX0jgyAiPl8Af"
 }]
 
+//Don't move this, needs to run on page load so that it will have the user's location data by the time they want to start.
+getLocation();
 
-// let userPreferences = {
-//     "Rain": [],
-//     "Clouds":["candy"],
-//     "Clear":[],
-// }
+//hides user input prompts until the user clicks a button to start, we still need to add a different button other than reccomend playlists to start the user experience.
+$(".moodButton").hide();
+$("#localCallout").hide();
+$("#feelsLabel").hide();
 
-// will need to take an emotion
+// deals with opening animation (inserted by etp 6/27)
+setTimeout(function () {
 
-// function buildUserProfile(){
-  //     //Will replace empty jQuery with values once design has them implemented
-  //     rainEmotion = $("").val().trim();
-  //     clearSunnyEmotion = $("").val().trim();
-  //     cloudyEmotion = $("").val().trim();
+  // making the start button animate in on timer
+  $("#startDiv").addClass("animate__animated animate__zoomIn");
+  $("#startDiv").removeClass("none");
+}, 1111);
+
+/**
+ * This function handles the proceedings after the start button is clicked
+ */
+function welcome() {
+  $("#startDiv").hide();
+  $("main").removeClass(
+    "grid-x grid-padding-x align-center-middle text-center"
+  );
+  $("#weatherTop").show();
+}
+
+function music() {
+  $("#resultscallouts").show();
+}
+
   
-  //     (userPreferences.rain).push(rainEmotion);
-  //     userPreferences.clear = clearSunnyEmotion;
-  //     userPreferences.clouds = cloudyEmotion;
-  // }
-  
-  
-  
-  
-  
-  
-  
-  
-  /**
-   * this function grabs user's 
-   */
-  function getLocation() {
-    //Grabs users general location based on IP address
-    $.ajax({
-      url: "https://ipapi.co/json/",
-      method: "GET",
-    }).then(function (response) {
-      cityName = response.city;
-      city.push(cityName);
-      console.log(cityName);
-    });
-  }
-  
-  function playlistRandomizer(mood) {
-    //randomly selects a name/url pair by generating a random number and using it as the index number to access a name and uri pair from whichever emotion object is passed into it.
-    
-    let listSelector = Math.floor(Math.random() * Math.floor(mood.length - 1));
-    let nameSelected = mood[listSelector].name;
-    let uriSelected = mood[listSelector].uri;
-    
-
-    // WORKSPACE$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-    
-    playlistsPicked.push(nameSelected);
-    localStorage.setItem(currentWeather, JSON.stringify(playlistsPicked));
-    // WORKSPACE$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-
-
-// HERE IS WHERE WE PUT THE ARRAY SAVE!!!!!!
-    console.log(listSelector, nameSelected, uriSelected);
-
-
-
-
-    //Appends a random playlist to the page from whatever emotion is passsed in/
-    let songSpace = $("#resultscallouts");
-    let spotifyfirst = '<iframe src="https://open.spotify.com/embed/playlist/';
-    let uriInsert = uriSelected + '" ';
-    let spotifyLast =
-    ' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
-    let finalLink = spotifyfirst + uriInsert + spotifyLast;
-    
-    // console.log(finalLink);
-    songSpace.prepend(finalLink);
-  }
-  
-  //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
-  function weatherSearch() {
-    let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial";
-    let queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
-    let iconURL = "https://openweathermap.org/img/wn/";
-    
-    // console.log(queryURL);
-    
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      //Returns weather conditions in a string ex: sunny, cloudy, raining etc.
-      
-      let weatherType = response.weather[0].main;
-      currentWeather.push(weatherType);
-      
-      //Grabs the id of the icon associated with the current weather conditions
-    let iconLoc = response.weather[0].icon;
-    
-    //concatenates the standard url for the icons with the id of the icon associated with the current weather and puts it into a usable image source link
-    let fullIconUrl = iconURL + iconLoc + "@2x.png";
-    
-    //Appends text prompting for user input to the page based on current weather.
-    weatherWelcome = $(".weatherType");
-
-    // handling localstorage - doing this within the weather ajax makes it easier to focus on the weather in question.
-    let retrievedPlaylists = localStorage.getItem(currentWeather[0]);
-    if (retrievedPlaylists) {
-    playlistsPicked.push(JSON.parse(retrievedPlaylists));
-    console.log(playlistsPicked);
-    
-    let pListString = "";
-  
-    playlistsPicked.forEach(item => {
-      pListString = pListString + item + ",  ";
-    });
-
-    $(".returnString").append(pListString);
-    };
-    
-
-    //This needs to be fixed is not currently working but is not a top tier priority
-    // console.log(fullIconUrl);
-    weatherIcon = $('<img style="display: inline-block;">', { id: "weatherIcon", src: fullIconUrl });
-    $("#weatherIconHost").append(weatherIcon);
-
-
-    //will make this text more intuitive later this is just temporary for testing 
-    if (weatherType == "Clouds"){
-          weatherWelcome.text('Looks partly cloudy in your neighborhood');
-    }
-    else if (weatherType == "Rain"){
-        weatherWelcome.text('Looks like it might be raining a bit where you are right now');
-    }
-    else if (weatherType == "Clear"){ 
-        weatherWelcome.text('Seems like there are mostly clear skies in your neighborhood');
-    } else {
-      weatherWelcome.text('Hmm, not sure about your weather, but..');
-    }
-      // handling show/hides within weather function 
-    $(".moodButton").show();
-    $("#feelsLabel").show();
-    $("#localCallout").show();
-    $(".moodButton").addClass(
-      "animate__animated animate__jello animate__delay-1s"
-    );
-
-    // etp put this part in 6/25, handles conditional weather upon search function.
-    if (weatherType === "Clear") {
-      $(".wrapper").removeClass("parallax");
-      $(".wrapper").addClass("parallaxClear");
-      $(".top-bar").addClass("clear1");
-      $("footer").addClass("clear1");
-      $("button").addClass("clear1");
-      $(".moodButton").addClass("clear1");
-      $("#localCallout").addClass("clear1");
-    } else if (weatherType === "Clouds") {
-      $(".wrapper").removeClass("parallax");
-      $(".wrapper").addClass("parallaxClouds");
-      $(".top-bar").addClass("clouds");
-      $("footer").addClass("clouds");
-      $("button").addClass("clouds");
-      $(".moodButton").addClass("clouds");
-      $("#localCallout").addClass("Clouds");
-    } else if (weatherType === "Rain") {
-      $(".wrapper").removeClass("parallax");
-      $(".wrapper").addClass("parallaxRain");
-      $(".top-bar").addClass("rain");
-      $("footer").addClass("rain");
-      $("button").addClass("rain");
-      $(".moodButton").addClass("rain");
-      $("#localCallout").addClass("Rain");
-    } else {$("#localCallout").addClass("none");}
+function getLocation() {
+  //Grabs users general location based on IP address
+  $.ajax({
+    url: "https://ipapi.co/json/",
+    method: "GET",
+  }).then(function (response) {
+    cityName = response.city;
+    city.push(cityName);
+    console.log(cityName);
   });
+}
+
+
+function playlistRandomizer(mood) {
+  //randomly selects a name/url pair by generating a random number and using it as the index number to access a name and uri pair from whichever emotion object is passed into it.
+  
+  let listSelector = Math.floor(Math.random() * Math.floor(mood.length - 1));
+  let nameSelected = mood[listSelector].name;
+  let uriSelected = mood[listSelector].uri;
+  
+  playlistsPicked.push(nameSelected);
+  localStorage.setItem(currentWeather, JSON.stringify(playlistsPicked));
+
+  console.log(listSelector, nameSelected, uriSelected);
+
+  //Appends a random playlist to the page from whatever emotion is passsed in/
+  let songSpace = $("#resultscallouts");
+  let spotifyfirst = '<iframe src="https://open.spotify.com/embed/playlist/';
+  let uriInsert = uriSelected + '" ';
+  let spotifyLast =
+  ' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>';
+  let finalLink = spotifyfirst + uriInsert + spotifyLast;
+  
+  // console.log(finalLink);
+  songSpace.prepend(finalLink);
+}
+
+  //function will fetch the weather conditions in a given city and the icon associated with that weather condition Weather.main returns are :Clouds, Clear, Rain, Snow, Mist, Fog, Thunderstorm
+function weatherSearch() {
+  let apiKey = "&appid=fb96e9e4a08a704e7e522a72ff158382&units=imperial";
+  let queryURL =
+  "https://api.openweathermap.org/data/2.5/weather?q=" + city[0] + apiKey;
+  let iconURL = "https://openweathermap.org/img/wn/";
+  
+  // console.log(queryURL);
+  
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    //Returns weather conditions in a string ex: sunny, cloudy, raining etc.
+    
+    let weatherType = response.weather[0].main;
+    currentWeather.push(weatherType);
+    
+    //Grabs the id of the icon associated with the current weather conditions
+  let iconLoc = response.weather[0].icon;
+  
+  //concatenates the standard url for the icons with the id of the icon associated with the current weather and puts it into a usable image source link
+  let fullIconUrl = iconURL + iconLoc + "@2x.png";
+  
+  //Appends text prompting for user input to the page based on current weather.
+  weatherWelcome = $(".weatherType");
+
+  // handling localstorage - doing this within the weather ajax makes it easier to focus on the weather in question.
+  let retrievedPlaylists = localStorage.getItem(currentWeather[0]);
+  if (retrievedPlaylists) {
+  playlistsPicked.push(JSON.parse(retrievedPlaylists));
+  console.log(playlistsPicked);
+  
+  let pListString = "";
+
+  playlistsPicked.forEach(item => {
+    pListString = pListString + item + ",  ";
+  });
+
+  $(".returnString").append(pListString);
+  };
+  
+  //This needs to be fixed is not currently working but is not a top tier priority
+  // console.log(fullIconUrl);
+  weatherIcon = $('<img style="display: inline-block;">', { id: "weatherIcon", src: fullIconUrl });
+  $("#weatherIconHost").append(weatherIcon);
+
+
+  //intuitive text for weather return
+  if (weatherType == "Clouds"){
+        weatherWelcome.text('Looks partly cloudy in your neighborhood');
+  }
+  else if (weatherType == "Rain"){
+      weatherWelcome.text('Looks like it might be raining a bit where you are right now');
+  }
+  else if (weatherType == "Clear"){ 
+      weatherWelcome.text('Seems like there are mostly clear skies in your neighborhood');
+  } else {
+    weatherWelcome.text('Hmm, not sure about your weather, but..');
+  }
+    // handling show/hides within weather function 
+  $(".moodButton").show();
+  $("#feelsLabel").show();
+  $("#localCallout").show();
+  $(".moodButton").addClass(
+    "animate__animated animate__jello animate__delay-1s"
+  );
+
+  // etp put this part in 6/25, handles conditional weather upon search function.
+  if (weatherType === "Clear") {
+    $(".wrapper").removeClass("parallax");
+    $(".wrapper").addClass("parallaxClear");
+    $(".top-bar").addClass("clear1");
+    $("footer").addClass("clear1");
+    $("button").addClass("clear1");
+    $(".moodButton").addClass("clear1");
+    $("#localCallout").addClass("clear1");
+  } else if (weatherType === "Clouds") {
+    $(".wrapper").removeClass("parallax");
+    $(".wrapper").addClass("parallaxClouds");
+    $(".top-bar").addClass("clouds");
+    $("footer").addClass("clouds");
+    $("button").addClass("clouds");
+    $(".moodButton").addClass("clouds");
+    $("#localCallout").addClass("Clouds");
+  } else if (weatherType === "Rain") {
+    $(".wrapper").removeClass("parallax");
+    $(".wrapper").addClass("parallaxRain");
+    $(".top-bar").addClass("rain");
+    $("footer").addClass("rain");
+    $("button").addClass("rain");
+    $(".moodButton").addClass("rain");
+    $("#localCallout").addClass("Rain");
+  } else {$("#localCallout").addClass("none");}
+});
 }
 
 //Temporary to test the weathersearch and getlocation functions
@@ -480,43 +427,18 @@ $("#startBtn").on("click", function () {
 $(".moodButton").click(function () {
   //Hide the mood buttons after user input has been taken in
   $("#resultscallouts").show();
-
-    
-  // TODO:
-  // this brings a return string of "Clouds"
-  // console.log(currentWeather);  
-  // // TODO:
-  // TODO:
-      
-      
-      
+     
       //Capture current mood data from the clicked mood button and scope it globally for later use.
       mood = $(this).attr("mood-data");
       // (userPreferences.currentWeather[0]).push(mood);
       console.log();
 
-
-
   //Pass
   playlistRandomizer(eval(mood));
 });
 
-// event handler for reset button (etp 6.27)
+// event handler for reset button 
 $("#reset").click(function () {
   $("#resultscallouts").empty();
   localStorage.clear();
-  //   TODO: put on this line a clearance of saved user preferences.
 });
-
-
-
-// thing we want to bring back is :
-// ("weather", "strung list of playlists picked")
-
-
-// NEED: playlistsPicked [];
-//  on randomizer playlistsPicked.push(nameSelected);
-  // localStorage.setItem(currentWeather, JSON.stringify(playlistsPicked)  )
-// 
-// 
-// 

@@ -11,20 +11,6 @@ main {
     min-width:100vw;
 }
 
-/* 
-body::-webkit-scrollbar {
-    width: 1em;
-}
-
-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: rgba(169, 169, 169, 0);
-    outline: 1px solid rgb(212, 220, 228);
-} */
-
 .wrapper {
     min-height: 100vh;
     display: grid;
@@ -298,6 +284,7 @@ footer {
     border-radius: 5 px;
     margin: 10vh, 20vw;
     word-wrap: break-word;
+    max-width: 90vw;
 }
 /* local storage callout styling  */
 #localCallout h5 {
