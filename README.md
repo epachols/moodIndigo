@@ -13,7 +13,7 @@ Anthony Perez
 Hannibal Wyman
 
 
-Project Description:
+#Project Description:
 
 Mood Indigo 
 
@@ -26,22 +26,23 @@ Mood Indigo is a mobile first app that connects the users emotions with suggesta
 ![](images/MoodIndi-Phone.png)
 ![](images/MoodIndi-Desktop.png)
 
-Key Elements & Features:
+#Key Elements & Features:
 
 Musical and Emotional Enjoyment
 
-Motivation:
+#Motivation:
 
 Listen to music that fits the users mood.
 
-Tech/framework used:
+#Tech/framework used:
 
 HTML, CSS, JavaScript, JQuery, AJAX, Foundation
 
 New Technology used:
 
 Animate.css, CodePen.css
-API Reference:
+
+#API Reference:
 
 Spotify
 
