@@ -1,6 +1,6 @@
 html {
     background-color: rgb(0, 0, 0);
-    color: gainsboro;
+    color: white;
     min-height: 100vh;
     min-width:100vw;
 }
@@ -36,17 +36,13 @@ body::-webkit-scrollbar-thumb {
     display: none;
 }
 
-#radTower {
-    width: 200px;
-    height: 40vh;
-}
-
-.welcomeWeather {
+#weatherTop {
     font-family: 'Lobster', cursive;
     color: white;
     font-size: 2rem;
     padding-top: 1em;
-    margin: 10vh 2vh auto;
+    margin-top: 10vh;
+    margin-bottom: 7vh;
 }
 
 h1 {
@@ -61,7 +57,7 @@ h3 {
 h2 {
     font-family: 'Lobster', cursive;
     color: #2c0164;
-    text-shadow: whitesmoke;
+    text-shadow: white;
 }
 
 .fas {
@@ -79,50 +75,48 @@ h2 {
     border-radius: 40px;
 }
 
-#startBtn {
-    font-family: 'Lobster', cursive;
-    font-size: 30px;
-    width: 300px;
-    height: 50vh;
-    background-color: rgb(121, 121, 121);
-    border: 2px solid aliceblue 
-
-    /* make button border and fix this with pseudoclasses */
-}
-
 #reset {
     font-family: 'Lobster', cursive;
-    text-shadow: whitesmoke;
+    text-shadow: white;
     margin-top:1vh;
 }
-/* .iconHost {
-    margin: 10vh 0
-} */
+
+#feelsLabel {
+    font-family: 'Lobster', cursive;
+    text-shadow: rgb(15, 14, 14);
+    margin:2vh auto;
+    color: white;
+}
+
+#weatherIconHost {
+    display: inline-block;
+}
 
 .top-bar {
     font-family: 'Lobster', cursive;
     background-color: black;
     color: ghostwhite;
     min-height: 10vh;
+    padding: 0 2vw;
 }
 
 #welcomeMat {
-    /* background-color: rgba(131, 129, 134, 0.664); */
     margin-top: 1vh;
 }
 
 #resultscallouts {
     margin-top: 5vh;
     margin-bottom: 2vh;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     padding-top: 1vh;
-    padding-left: 5vh;
     padding-bottom: 3vh;
 
     /* handles the overflow scrolling  */
     overflow-y: scroll;
     height: 65vh;
+    overflow-x: scroll;
+    width:80vw;
 }
 
 iframe {
@@ -198,8 +192,129 @@ footer {
     background-color: #121141;
 }
 
-#splash {
-    background-color: rgba(97, 97, 112, 0.801);
-    border-top: rgba(0, 0, 0, 0.671) solid 2px;
-    border-bottom: rgba(0, 0, 0, 0.671) solid 2px;
+
+/* The following css block handles the span animations around the start button  */
+#startBtn{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 200px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    /* margin-right: 50px; */
+    font-size: 3rem;
+}
+#startBtn:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+#startBtn:nth-child(1){
+    filter: hue-rotate(110deg);
+}
+#startBtn span{
+    position: absolute;
+    display: block;
+}
+#startBtn span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+#startBtn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+#startBtn span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+#startBtn span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+/* start button css handling for animate spans complete  */
+
+#localCallout {
+    background-color: rgba(230, 230, 250, 0.308);
+    border-radius: 5 px;
+    margin: 10vh, 20vw;
+    word-wrap: break-word;
+}
+/* local storage callout styling  */
+#localCallout h5 {
+    font-family: 'Lobster', cursive;
+    text-shadow: rgb(85, 84, 84);
+    color: rgb(195, 214, 231);
+    padding-right: 1vw;
+    margin-top:1vh;
+    margin-right: 1vh;
+}
+
+h4 {
+    font-family: 'Lobster', cursive;
+    color: #4B0082;
+}
+.returnString {
+    font-family: 'Lobster', cursive;
+    color: white;
+    word-wrap: break-word;
 }
