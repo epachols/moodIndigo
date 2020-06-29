@@ -22,7 +22,7 @@ As a user, when I visit this page, I want to quickly and easily access a playlis
 
 Mood Indigo is a mobile first app that connects the users emotions with suggestable playlist through Spotify based on the users local weather. The application utilizes the Spotify API to generate random playlist, ip-API to gather general geo-location, and Open Weather API to pull user local weather info.
  
-
+![](images/MoodIndi-Desktop.png)
 
 Key Elements & Features:
 
