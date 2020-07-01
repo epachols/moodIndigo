@@ -2,6 +2,8 @@
 Project #1 – Team 5
 Trilogy – Full Stack Development Program University of Washington Cohort 2020
 
+deployed link: https://epachols.github.io/moodIndigo/
+
 Team Members:
 
 Evan Pacholski
@@ -55,3 +57,4 @@ Copyright:
 Kyle Anderson, Anthony Perez, Hannibal Wyman, Evan Pacholski
 
 © 2020 All Rights Reserved
+
